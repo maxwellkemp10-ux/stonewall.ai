@@ -28,7 +28,7 @@ Notion, packet readiness workflows, and witness-prep loops sit on top of the cor
 
 ### Publication layer
 
-GitHub Pages, the portal, the official brief, and GitBook all express the same system through different presentation surfaces.
+GitHub Pages, the portal, and the official brief all express the same system through different presentation surfaces.
 
 ## Why the Architecture Matters
 

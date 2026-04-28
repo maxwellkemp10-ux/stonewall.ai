@@ -3,7 +3,6 @@
 [![GitHub Pages](https://img.shields.io/badge/Live-Showcase-c96b3c?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
 [![Official Brief](https://img.shields.io/badge/Read-Official_Brief-1d1d1d?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html)
 [![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-0b57d0?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/)
-[![GitBook](https://img.shields.io/badge/GitBook-Long--Form_Narrative-3884ff?style=for-the-badge)](https://maxwell-kemp.gitbook.io/stonewall-qb3/stonewall-showcase)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776ab?style=flat-square)](#tech-stack)
 [![Node](https://img.shields.io/badge/Node.js-20%2B-5fa04e?style=flat-square)](#tech-stack)
 [![Notion API](https://img.shields.io/badge/Notion-API-000000?style=flat-square)](#innovation-stack)
@@ -21,7 +20,6 @@ The repository shows the product logic, the automation architecture, and the del
 - [Live showcase](https://maxwellkemp10-ux.github.io/stonewall-showcase/) — the fastest way to understand the platform.
 - [Official brief](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html) — the boardroom-safe narrative version.
 - [Portal demo](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/) — the operator-facing command surface.
-- [GitBook edition](https://maxwell-kemp.gitbook.io/stonewall-qb3/stonewall-showcase) — the durable long-form product book.
 - [Architecture note](https://github.com/maxwellkemp10-ux/stonewall-showcase/blob/main/docs/ARCHITECTURE.md) — layer-by-layer technical walkthrough.
 
 ## By The Numbers
@@ -59,7 +57,7 @@ Stonewall treats the corpus as a governed operating layer instead of burying kno
 
 ### 4. Static Publication Surfaces
 
-The platform can be shown cleanly through GitHub Pages, GitBook, and a static portal because the architecture underneath is real.
+The platform can be shown cleanly through GitHub Pages and a static portal because the architecture underneath is real.
 
 ## Architecture
 
@@ -82,7 +80,7 @@ OneDrive / Outlook Export
  Verification + Reporting
           |
           v
-   Portal / Brief / GitBook
+   Portal / Brief
 ```
 
 ## Representative Commands
@@ -103,6 +101,6 @@ python scripts/verify_repo_consistency.py
 | Knowledge layer | Notion API |
 | Source reservoir | Microsoft OneDrive |
 | CI / automation | GitHub Actions |
-| Delivery surfaces | GitHub Pages, GitBook, static portal |
+| Delivery surfaces | GitHub Pages, static portal |
 
 The public repository is the proof surface. The implementation work is the product.

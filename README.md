@@ -1,10 +1,3 @@
----
-description: >-
-  Stonewall is a legal document intelligence platform for high-volume civil litigation.
-  It turns messy case files, email exports, deadlines, and AI review into one governed
-  operating surface.
----
-
 # Stonewall
 
 **Legal document intelligence for litigation teams that move fast.**
@@ -15,7 +8,6 @@ spreadsheets, and notes into a searchable, validated, AI-ready litigation corpus
 [![Live Showcase](https://img.shields.io/badge/Live-Showcase-c96b3c?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
 [![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-111827?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/)
 [![Official Brief](https://img.shields.io/badge/Read-Official_Brief-f4ede3?style=for-the-badge&labelColor=171310)](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html)
-[![GitBook](https://img.shields.io/badge/GitBook-Product_Book-3884ff?style=for-the-badge)](https://maxwell-kemp.gitbook.io/stonewall-qb3/stonewall-showcase)
 
 ---
 
@@ -54,7 +46,7 @@ Stonewall is that layer.
 - **Operator-first.** The platform is not just storage. It stages the next move.
 - **AI with guardrails.** Structured sidecars, source links, validation, and review queues keep outputs traceable.
 - **Static where possible. Automated where useful.** Fast to deploy, easy to inspect, hard to break.
-- **Commercially legible.** Showcase, portal, official brief, and GitBook all tell one clean product story.
+- **Commercially legible.** Showcase, portal, and official brief all tell one clean product story.
 
 ---
 
@@ -67,7 +59,7 @@ Stonewall is that layer.
 | Behavioral patterns indexed | 197 |
 | Emails processed | 6,000+ |
 | Artifact classes | 23 |
-| Delivery surfaces | GitHub Pages, Portal, GitBook, Official Brief |
+| Delivery surfaces | GitHub Pages, Portal, Official Brief |
 
 ---
 
@@ -77,7 +69,6 @@ Stonewall is that layer.
 - **[Portal demo](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/)** — dashboard-style operator experience.
 - **[Official brief](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html)** — polished business and architecture brief.
 - **[Workflow notes](https://maxwellkemp10-ux.github.io/stonewall-showcase/insights.html)** — implementation and operating model notes.
-- **[GitBook edition](https://maxwell-kemp.gitbook.io/stonewall-qb3/stonewall-showcase)** — long-form product book.
 
 ---
 
@@ -117,7 +108,7 @@ and CI-visible checks over opaque one-off automation.
 | Case management | Notion API |
 | Storage | Microsoft OneDrive |
 | Automation | GitHub Actions |
-| Delivery | GitHub Pages, GitBook, static HTML |
+| Delivery | GitHub Pages, static HTML |
 
 ---
 
@@ -126,13 +117,16 @@ and CI-visible checks over opaque one-off automation.
 ```text
 stonewall-showcase/
 ├── docs/                 # GitHub Pages showcase and portal
+│   ├── overview/         # product docs (official brief, architecture, workflow surfaces)
+│   ├── showcase/         # showcase narrative and synergy docs
+│   └── portal/           # operator portal app and data snapshots
 ├── scripts/              # ingestion, sync, QC, and reporting automation
 ├── agents/               # AI agent configuration
 ├── tests/                # validation and regression tests
+├── archive/              # legacy GitBook export content
+├── hoss-stonewall/       # corpus reference material and tactical standards
 ├── .github/workflows/    # CI/CD pipelines
 ├── .env.example          # required environment variables
-├── PRODUCT_ARCHITECTURE.md
-├── OFFICIAL_BRIEF.md
 └── README.md
 ```
 

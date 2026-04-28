@@ -1,8 +1,8 @@
 # Stonewall Showcase
 
-Stonewall is a legal document intelligence platform built as a litigation control plane. This page is the canonical GitBook entrypoint for the showcase narrative.
+Stonewall is a legal document intelligence platform built as a litigation control plane. This page is the canonical showcase narrative entrypoint.
 
-Start with [Quarterback](stonewall-showcase/quarterback/README.md). From there, the book branches into the official brief, the architecture, the workflow layer, and the publication runbook.
+Start with [Quarterback](../../archive/stonewall-showcase/quarterback/README.md). From there, the documentation branches into the official brief, the architecture, the workflow layer, and the publication runbook.
 
 ## What this showcase demonstrates
 
