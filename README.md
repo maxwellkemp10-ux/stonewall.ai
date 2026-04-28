@@ -123,7 +123,7 @@ stonewall-showcase/
 ├── scripts/              # ingestion, sync, QC, and reporting automation
 ├── agents/               # AI agent configuration
 ├── tests/                # validation and regression tests
-├── archive/              # legacy GitBook export content
+├── archive/              # archived publication-runbook reference material
 ├── hoss-stonewall/       # corpus reference material and tactical standards
 ├── .github/workflows/    # CI/CD pipelines
 ├── .env.example          # required environment variables

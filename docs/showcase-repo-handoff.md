@@ -1,11 +1,11 @@
 # Stonewall Publication Runbook
 
-This runbook describes how to keep the Stonewall showcase surfaces aligned across GitHub Pages, the official brief, the portal demo, and GitBook.
+This runbook describes how to keep the Stonewall showcase surfaces aligned across GitHub Pages, the official brief, and the portal demo.
 
 ## Principles
 
 1. **Lead with innovation** — every published surface should foreground the platform thesis, not process commentary.
-2. **Keep one narrative** — the showcase, official brief, portal, and GitBook should feel like one product argument told in different formats.
+2. **Keep one narrative** — the showcase, official brief, and portal should feel like one product argument told in different formats.
 3. **Preserve architectural clarity** — the audience should immediately understand the flat-file database, CLI layer, AI recall system, workflow sync, verification gates, and portal stack.
 4. **Ship cleanly** — links, counts, and deployment surfaces should stay synchronized so the sendable URL always feels premium.
 
@@ -19,7 +19,7 @@ Refresh these files together whenever the product story evolves:
 - `docs/official-brief.html`
 - `docs/portal/index.html`
 - `README.md`
-- `OFFICIAL_BRIEF.md`
+- `docs/overview/official-brief.md`
 
 ### 2. Keep the messaging aligned
 
@@ -42,7 +42,6 @@ Confirm these entrypoints all work after changes:
 - `/`
 - `/official-brief.html`
 - `/portal/`
-- GitBook landing page
 
 ### 4. Trigger Pages deployment
 
@@ -58,7 +57,7 @@ gh run view <run-id> --repo maxwellkemp10-ux/stonewall-showcase
 Before calling the site finished, grep the public copy for drift away from the product thesis.
 
 ```bash
-rg -n -i "sanitized|kabuki|unsafe|privileged|private version|internal lore" docs README.md OFFICIAL_BRIEF.md
+rg -n -i "sanitized|kabuki|unsafe|privileged|private version|internal lore" docs README.md docs/overview/official-brief.md
 ```
 
 The result should be empty on the publication surfaces.
@@ -68,7 +67,6 @@ The result should be empty on the publication surfaces.
 - [ ] Root showcase URL renders correctly
 - [ ] Official brief renders correctly
 - [ ] Portal renders correctly
-- [ ] GitBook link is current
 - [ ] Metrics match `docs/site-data.json`
 - [ ] Product language is consistent across all surfaces
 - [ ] No stray archive-language or process-language has crept back into the public story
