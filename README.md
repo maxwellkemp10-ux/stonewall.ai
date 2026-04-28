@@ -5,9 +5,9 @@
 Stonewall turns scattered emails, pleadings, medical records, deposition material,
 spreadsheets, and notes into a searchable, validated, AI-ready litigation corpus.
 
-[![Live Showcase](https://img.shields.io/badge/Live-Showcase-c96b3c?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
-[![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-111827?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/)
-[![Official Brief](https://img.shields.io/badge/Read-Official_Brief-f4ede3?style=for-the-badge&labelColor=171310)](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html)
+[![Live Showcase](https://img.shields.io/badge/Live-stonewall.esq-c96b3c?style=for-the-badge)](https://stonewall.esq/)
+[![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-111827?style=for-the-badge)](https://stonewall.esq/portal/)
+[![Official Brief](https://img.shields.io/badge/Read-Official_Brief-f4ede3?style=for-the-badge&labelColor=171310)](https://stonewall.esq/official-brief.html)
 
 ---
 
@@ -65,10 +65,10 @@ Stonewall is that layer.
 
 ## Product surfaces
 
-- **[Live showcase](https://maxwellkemp10-ux.github.io/stonewall-showcase/)** — executive overview and product narrative.
-- **[Portal demo](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/)** — dashboard-style operator experience.
-- **[Official brief](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html)** — polished business and architecture brief.
-- **[Workflow notes](https://maxwellkemp10-ux.github.io/stonewall-showcase/insights.html)** — implementation and operating model notes.
+- **[Live showcase](https://stonewall.esq/)** — executive overview and product narrative.
+- **[Portal demo](https://stonewall.esq/portal/)** — dashboard-style operator experience.
+- **[Official brief](https://stonewall.esq/official-brief.html)** — polished business and architecture brief.
+- **[Workflow notes](https://stonewall.esq/insights.html)** — implementation and operating model notes.
 
 ---
 

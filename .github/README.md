@@ -1,8 +1,8 @@
 # Stonewall — Legal Document Intelligence Platform
 
-[![GitHub Pages](https://img.shields.io/badge/Live-Showcase-c96b3c?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
-[![Official Brief](https://img.shields.io/badge/Read-Official_Brief-1d1d1d?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html)
-[![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-0b57d0?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/)
+[![GitHub Pages](https://img.shields.io/badge/Live-stonewall.esq-c96b3c?style=for-the-badge)](https://stonewall.esq/)
+[![Official Brief](https://img.shields.io/badge/Read-Official_Brief-1d1d1d?style=for-the-badge)](https://stonewall.esq/official-brief.html)
+[![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-0b57d0?style=for-the-badge)](https://stonewall.esq/portal/)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776ab?style=flat-square)](#tech-stack)
 [![Node](https://img.shields.io/badge/Node.js-20%2B-5fa04e?style=flat-square)](#tech-stack)
 [![Notion API](https://img.shields.io/badge/Notion-API-000000?style=flat-square)](#innovation-stack)
@@ -17,9 +17,9 @@ The repository shows the product logic, the automation architecture, and the del
 
 ## Live Surfaces
 
-- [Live showcase](https://maxwellkemp10-ux.github.io/stonewall-showcase/) — the fastest way to understand the platform.
-- [Official brief](https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html) — the boardroom-safe narrative version.
-- [Portal demo](https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/) — the operator-facing command surface.
+- [Live showcase](https://stonewall.esq/) — the fastest way to understand the platform.
+- [Official brief](https://stonewall.esq/official-brief.html) — the boardroom-safe narrative version.
+- [Portal demo](https://stonewall.esq/portal/) — the operator-facing command surface.
 - [Architecture note](https://github.com/maxwellkemp10-ux/stonewall-showcase/blob/main/docs/ARCHITECTURE.md) — layer-by-layer technical walkthrough.
 
 ## By The Numbers

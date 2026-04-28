@@ -14,6 +14,6 @@ Start with [Quarterback](../../archive/stonewall-showcase/quarterback/README.md)
 
 ## Companion surfaces
 
-- GitHub Pages: https://maxwellkemp10-ux.github.io/stonewall-showcase/
-- Official brief: https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html
-- Portal demo: https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/
+- Live site: https://stonewall.esq/
+- Official brief: https://stonewall.esq/official-brief.html
+- Portal demo: https://stonewall.esq/portal/
