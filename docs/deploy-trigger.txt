@@ -1,1 +1,0 @@
-GitHub Pages deployment marker for the current Stonewall publication bundle.

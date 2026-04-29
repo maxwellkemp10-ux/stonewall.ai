@@ -1,6 +1,6 @@
 # Stonewall Official Brief
 
-Stonewall is a legal document intelligence platform built as a control plane rather than a dashboard costume. The showcase demonstrates a system that can catalog, search, validate, synchronize, and publish a large litigation corpus with unusual coherence. The official brief is the durable version of that same claim: the long-form reasoning that a GitBook surface or printed PDF can preserve without depending on a live UI.
+Stonewall is a legal document intelligence platform built as a control plane rather than a dashboard costume. The showcase demonstrates a system that can catalog, search, validate, synchronize, and publish a large litigation corpus with unusual coherence. The official brief is the durable version of that same claim: the long-form reasoning that a printed PDF can preserve without depending on a live UI.
 
 ## Executive Summary
 
@@ -78,7 +78,7 @@ Stonewall publishes through three coordinated surfaces:
 
 - GitHub Pages is the immediate reveal layer designed to create instant product clarity
 - `official-brief.html` is the print and PDF edition of the same thesis
-- `OFFICIAL_BRIEF.md` is the durable markdown source for GitBook and long-form documentation
+- `docs/overview/official-brief.md` is the durable markdown source for long-form documentation
 
 These surfaces should feel like one argument expressed in three tempos: immediate, formal, and durable.
 
