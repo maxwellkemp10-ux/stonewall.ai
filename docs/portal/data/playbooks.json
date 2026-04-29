@@ -43,7 +43,7 @@
     "Map artifacts to matter + pattern surfaces",
     "Run consistency and quality checks",
     "Stage operator payloads and runway boards",
-    "Publish sanitized static surfaces for review"
+    "Publish static surfaces for review"
   ],
   "qc_checks": [
     {
@@ -78,7 +78,7 @@
     },
     {
       "name": "Reporting lane",
-      "description": "Sanitized operational summaries become publishable showcase artifacts."
+      "description": "Operational summaries become publishable artifacts."
     }
   ]
 }
