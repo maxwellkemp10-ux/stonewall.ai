@@ -4,7 +4,7 @@
 `Stonewall` is a legal document intelligence platform with automation scripts in `scripts/`, test coverage in `tests/`, and CI/CD in `.github/workflows/`. AI agent configurations live in `.claude/` and `agents/`. The platform integrates with Notion for case management and OneDrive for document storage.
 
 ## Build, Test, and Development Commands
-- `node --test tests/qb1_tracker_helpers.test.mjs` runs the Node helper tests.
+- `node --test tests/tracker_helpers.test.mjs` runs the Node helper tests.
 - `node --test tests/email_consolidator.test.mjs` runs the email consolidator tests.
 - `python -m unittest tests.test_ingest_onedrive tests.test_verify_repo_consistency tests.test_tactical_brief` runs the Python test suite.
 - `python scripts/repo_sweep.py` performs repo hygiene checks.

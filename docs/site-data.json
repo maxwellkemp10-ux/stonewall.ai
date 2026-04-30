@@ -113,72 +113,7 @@
       "layer": "Report Readiness",
       "impact": "Stages chronology, treatment, and damages notes before downstream packet workflows.",
       "signal": "Pre-report packet readiness lane"
-    },
-    {
-      "title": "Brain Skill v12.1 Recall Routing",
-      "layer": "AI Recall",
-      "impact": "Routes Claude to the right source surface for any question so no session starts from zero.",
-      "signal": "Versioned codex routing with read-before-assert discipline"
-    },
-    {
-      "title": "Governance Guardrails & Audit Gate",
-      "layer": "Repo Regulation",
-      "impact": "PR communication standard plus pre-commit guardrails enforce a uniform audit trail across every change.",
-      "signal": "pre-commit + PR audit summary block"
-    },
-    {
-      "title": "Gitleaks Secret Scanning",
-      "layer": "Security",
-      "impact": "Free GHAS-class secret scanning runs on every push to keep credentials out of the corpus.",
-      "signal": ".gitleaks.toml + ignore allowlist"
-    },
-    {
-      "title": "Notion Drift Report",
-      "layer": "Operator Control",
-      "impact": "Read-only Legal Matters audit surfaces drift between repo and Notion without ever writing to Notion.",
-      "signal": "Markdown report + optional JSON sidecar"
-    },
-    {
-      "title": "Watchlist Digest",
-      "layer": "Daily Operations",
-      "impact": "Declarative watchlist over the manifest tracks names, aliases, patterns, and cases the operator cares about.",
-      "signal": "tier + since + oneline digest modes"
-    },
-    {
-      "title": "Cloud Repo Repair Automation",
-      "layer": "Reliability",
-      "impact": "Deterministic cloud runs snapshot, refresh KPIs, run consistency checks, and bundle a handoff report.",
-      "signal": "Branch-first + clean-worktree guards"
-    },
-    {
-      "title": "Deployment Platform Matrix",
-      "layer": "Deployment",
-      "impact": "Cloudflare Pages, Railway bot, and optional Vercel are documented in a single keep/cut runbook.",
-      "signal": "60-second deployment quickstart"
-    },
-    {
-      "title": "Command Platform Foundation",
-      "layer": "Operator Surfaces",
-      "impact": "FastAPI portal + Dockerfile + Railway config establish a multi-user command surface on top of the corpus.",
-      "signal": "portal/ + Dockerfile.portal + railway.toml"
-    },
-    {
-      "title": "Corpus KPI Campaign Block",
-      "layer": "Analytics",
-      "impact": "corpus_kpis.json exposes unanalyzed_active_total and unanalyzed_by_type so backlog can be prioritized by artifact type.",
-      "signal": "Per-type unanalyzed counts"
-    },
-    {
-      "title": "615+ Test Verification Suite",
-      "layer": "Quality Control",
-      "impact": "Parameterized artifact verification (752 tests) runs on every PR — structure, schema, manifest invariants, and per-artifact integrity are enforced on every push.",
-      "signal": "node + python + corpus checks in one workflow"
-    },
-    {
-      "title": "Working Corpus On Disk",
-      "layer": "Showcase",
-      "impact": "78 working artifacts (cases, depositions, transcripts, emails, motions, characters, patterns, billing) demonstrate the platform shape that visitors can browse, fork, and run end-to-end.",
-      "signal": "browseable corpus, deterministic generator, full test coverage"
+
     }
   ]
 }

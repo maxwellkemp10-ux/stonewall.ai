@@ -45,7 +45,7 @@ OneDrive paths are loaded from environment variables:
 
 ```bash
 # Node test suite
-node --test tests/qb1_tracker_helpers.test.mjs
+node --test tests/tracker_helpers.test.mjs
 node --test tests/email_consolidator.test.mjs
 
 # Python test suite

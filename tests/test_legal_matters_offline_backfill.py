@@ -1,7 +1,7 @@
 import unittest
 
 from scripts.legal_matters_offline_backfill import (
-    _sanitize_field,
+    _clean_field,
     choose_email_date,
     merge_candidate_sources,
     normalize_date,
@@ -56,28 +56,28 @@ class ChooseEmailDateTests(unittest.TestCase):
         self.assertEqual(choose_email_date(["2024-09-01"]), "2024-09-01")
 
 
-class SanitizeFieldTests(unittest.TestCase):
+class CleanFieldTests(unittest.TestCase):
     def test_newlines_collapsed(self) -> None:
-        self.assertEqual(_sanitize_field("line1\nline2\nline3"), "line1 line2 line3")
+        self.assertEqual(_clean_field("line1\nline2\nline3"), "line1 line2 line3")
 
     def test_extra_spaces_collapsed(self) -> None:
-        self.assertEqual(_sanitize_field("a    b     c"), "a b c")
+        self.assertEqual(_clean_field("a    b     c"), "a b c")
 
     def test_truncation(self) -> None:
         long = "x" * 250
-        result = _sanitize_field(long)
+        result = _clean_field(long)
         self.assertLessEqual(len(result), 200)
         self.assertTrue(result.endswith("\u2026"))
         self.assertEqual(result, "x" * 197 + "\u2026")
 
     def test_short_unchanged(self) -> None:
-        self.assertEqual(_sanitize_field("hello"), "hello")
+        self.assertEqual(_clean_field("hello"), "hello")
 
     def test_empty(self) -> None:
-        self.assertEqual(_sanitize_field(""), "")
+        self.assertEqual(_clean_field(""), "")
 
     def test_carriage_return(self) -> None:
-        self.assertEqual(_sanitize_field("a\r\nb"), "a b")
+        self.assertEqual(_clean_field("a\r\nb"), "a b")
 
 
 class MergeCandidateSourcesTests(unittest.TestCase):

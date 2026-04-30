@@ -13,7 +13,7 @@ ALL_EMAIL_DB = os.environ.get('NOTION_ALL_EMAIL_DB', 'YOUR_ALL_EMAIL_DATABASE_ID
 BATCH_SIZE = int(os.environ.get('BATCH_SIZE', '200'))
 STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'wire_state.json')
 
-AMBIGUOUS_KEYWORDS = {'small', 'cook', 'clark', 'noble', 'miller', 'adams', 'howard', 'freeman', 'elder'}
+AMBIGUOUS_KEYWORDS = {'alpha', 'beta', 'gamma', 'delta', 'sample', 'matter'}
 
 def api(method, endpoint, data=None, retries=3):
     url = f'https://api.notion.com/v1/{endpoint}'
@@ -62,7 +62,7 @@ def load_cases():
         if len(parts) > 1:
             for ap in parts[1].split('&')[1:]:
                 ap = re.sub(r'\s*\(.*?\)', '', ap).strip()
-                if ap and len(ap) > 2 and ap.lower() not in ('ups','jet star','antares'):
+                if ap and len(ap) > 2 and ap.lower() not in ('carrier', 'logistics co', 'sample account'):
                     keywords.add(ap.lower())
         
         regex = re.compile('|'.join(re.escape(k) for k in sorted(keywords, key=len, reverse=True)), re.I) if keywords else None

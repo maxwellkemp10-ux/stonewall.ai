@@ -82,7 +82,7 @@
     },
     {
       "name": "Sidecar coverage",
-      "description": "Canonical PDFs and text assets expose normalized Markdown derivatives."
+      "description": "Canonical PDFs and text assets provide normalized Markdown derivatives."
     },
     {
       "name": "Duplicate-family control",

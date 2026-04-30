@@ -1,10 +1,10 @@
 {
   "patterns": [
-    { "code": "THEARTOFTHEDEALMAXXED", "band": "negotiation", "hits": 42 },
-    { "code": "BONEMAXXED", "band": "medical", "hits": 38 },
-    { "code": "CHRONOLOGYLOCK", "band": "timeline", "hits": 31 },
-    { "code": "RESERVEWHISPER", "band": "coverage", "hits": 27 },
-    { "code": "WITNESSFRACTURE", "band": "testimony", "hits": 19 },
-    { "code": "DATAROOMDRIFT", "band": "discovery", "hits": 14 }
+    { "code": "NEGOTIATION-LANE", "band": "negotiation", "hits": 42 },
+    { "code": "MEDICAL-REVIEW", "band": "medical", "hits": 38 },
+    { "code": "CHRONOLOGY-LOCK", "band": "timeline", "hits": 31 },
+    { "code": "RESERVE-SIGNAL", "band": "coverage", "hits": 27 },
+    { "code": "WITNESS-THREAD", "band": "testimony", "hits": 19 },
+    { "code": "DATAROOM-DRIFT", "band": "discovery", "hits": 14 }
   ]
 }

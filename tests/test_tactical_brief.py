@@ -51,8 +51,8 @@ class TacticalBriefTests(unittest.TestCase):
                         "# Manifest",
                         "| ID | File | Type | Date | Characters | Patterns | Case | Summary | Analyzed |",
                         "|----|------|------|------|------------|----------|------|---------|----------|",
-                        "| A001 | sources/transcripts/egan_call.md | transcript | 2026-03-24 | Attorney | — | Smith | Smith call with OC on corp rep date and mediation. | no |",
-                        "| A002 | sources/transcripts/rivera.md | transcript | 2026-03-10 | Attorney | — | Jones | Jones scheduling update. | no |",
+                        "| A001 | sources/transcripts/matter_alpha_call.md | transcript | 2026-03-24 | Attorney | — | Smith | Smith call with OC on corp rep date and mediation. | no |",
+                        "| A002 | sources/transcripts/matter_beta.md | transcript | 2026-03-10 | Attorney | — | Jones | Jones scheduling update. | no |",
                     ]
                 ),
                 encoding="utf-8",
@@ -99,7 +99,7 @@ class TacticalBriefTests(unittest.TestCase):
                     {
                         "uncataloged_canonical_sources": [
                             "sources/teams_screenshots/smith rog verification 3.20.26.md",
-                            "sources/teams_screenshots/rivera update.md",
+                            "sources/teams_screenshots/matter beta update.md",
                         ]
                     }
                 ),
@@ -141,9 +141,9 @@ class TacticalBriefTests(unittest.TestCase):
                         "# Manifest",
                         "| ID | File | Type | Date | Characters | Patterns | Case | Summary | Analyzed |",
                         "|----|------|------|------|------------|----------|------|---------|----------|",
-                        "| A001 | sources/transcripts/egan_call.md | transcript | 2026-03-24 | Attorney | — | Smith | Smith call with OC. | no |",
-                        "| A002 | sources/transcripts/egan_email.md | email | 2026-03-23 | Attorney | — | Smith | Smith email chain. | no |",
-                        "| A003 | sources/transcripts/negrette.md | transcript | 2026-03-22 | Attorney | — | Brown | Brown mediation scheduling. | no |",
+                        "| A001 | sources/transcripts/matter_alpha_call.md | transcript | 2026-03-24 | Attorney | — | Smith | Smith call with OC. | no |",
+                        "| A002 | sources/transcripts/matter_alpha_email.md | email | 2026-03-23 | Attorney | — | Smith | Smith email chain. | no |",
+                        "| A003 | sources/transcripts/matter_gamma.md | transcript | 2026-03-22 | Attorney | — | Brown | Brown mediation scheduling. | no |",
                     ]
                 ),
                 encoding="utf-8",
@@ -278,7 +278,7 @@ class TacticalBriefTests(unittest.TestCase):
                     [
                         "# Cases",
                         "",
-                        "## SHEPPARD",
+                        "## SAMPLE",
                         "- **Key Discovery**:",
                         "  - NOD Corp Rep TB Spine & Sport depo 5/5/26 DT and Sub",
                     ]
@@ -289,8 +289,8 @@ class TacticalBriefTests(unittest.TestCase):
                 json.dumps(
                     [
                         {
-                            "name": "Sheppard v. UPS & Gomez",
-                            "claim": "AB505545070",
+                            "name": "Sample v. Logistics Co",
+                            "claim": "SAMPLE-001",
                             "reserve": "",
                             "incurred": "",
                             "depo_date": "5/5/2026",

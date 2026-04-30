@@ -30,7 +30,7 @@ That is why the platform feels coherent. The same source of truth drives the CLI
 
 ### CLI intelligence layer
 
-The stdlib-only CLI exposes stats, search, case, timeline, pattern, validation, and doctor workflows directly from the corpus. That makes the intelligence layer portable and auditable rather than hidden behind a private service boundary.
+The stdlib-only CLI presents stats, search, case, timeline, pattern, validation, and doctor workflows directly from the corpus. That makes the intelligence layer portable and auditable rather than hidden behind an external service boundary.
 
 ### AI brain as routed recall
 

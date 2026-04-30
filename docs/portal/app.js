@@ -1,5 +1,5 @@
 /**
- * QB1 Command Portal — static demo with local preferences (localStorage).
+ * Command Portal — static demo with local preferences (localStorage).
  */
 
 const STORAGE_KEY = "stonewall_portal_settings_v1";
