@@ -6,7 +6,7 @@ icon: database
 # 🗃️ Canon & Intelligence
 
 {% hint style="info" %}
-This section contains the full unsanitized codices — the primary intelligence layer for QB1's active portfolio. All files are canonical versions from the main Stonewall repository.
+This section contains the full canonical codices — the primary intelligence layer for QB1's active portfolio. All files are the working versions from the main Stonewall repository.
 {% endhint %}
 
 ---

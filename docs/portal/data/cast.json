@@ -1,7 +1,7 @@
 {
   "characters": [
-    { "alias": "QB1", "role": "Operator", "matters": 12, "note": "Primary case quarterbacking" },
-    { "alias": "Big Satan", "role": "Carrier", "matters": 8, "note": "Coverage correspondence cluster" },
+    { "alias": "Operator", "role": "Lead Counsel", "matters": 12, "note": "Primary case quarterbacking" },
+    { "alias": "Carrier Cluster", "role": "Carrier", "matters": 8, "note": "Coverage correspondence cluster" },
     { "alias": "Mr. Bill", "role": "Plaintiff bar", "matters": 5, "note": "Demand and mediation threads" },
     { "alias": "Doc Stack", "role": "Expert", "matters": 4, "note": "IME and causation line" }
   ]

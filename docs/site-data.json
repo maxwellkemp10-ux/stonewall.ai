@@ -1,10 +1,11 @@
 {
-  "generated": "2026-04-09T12:00:00-04:00",
+  "generated": "2026-04-28T12:00:00-04:00",
   "manifest": {
-    "total_rows": 1206,
-    "active": 1122,
-    "analyzed": 731,
-    "analysis_rate": 0.652
+    "total_rows": 1887,
+    "active": 1604,
+    "tombstoned": 283,
+    "analyzed": 1344,
+    "analysis_rate": 0.838
   },
   "patterns": {
     "total": 197,
@@ -14,7 +15,27 @@
     "total_unique": 64
   },
   "characters": {
-    "total_unique": 173
+    "total_unique": 179
+  },
+  "validation": {
+    "errors": 0,
+    "warnings": 0,
+    "missing_manifest_paths": 0,
+    "uncataloged_canonical_sources": 0,
+    "pdfs_missing_markdown": 0,
+    "duplicate_clusters_unresolved": 0
+  },
+  "test_suite": {
+    "total": 752,
+    "python": 743,
+    "node": 9,
+    "sample_corpus_fixtures": 78,
+    "headline": "615+ test verification suite"
+  },
+  "brain": {
+    "version": "v12.1",
+    "release": "cd7fe11c",
+    "tagline": "the ultimate cut"
   },
   "showcase_metrics": {
     "emails_processed": 6000,
@@ -25,73 +46,139 @@
       "title": "OneDrive Intake Orchestration",
       "layer": "Ingestion",
       "impact": "Transforms source folders into normalized Markdown sidecars and structured manifest rows.",
-      "sanitized_signal": "Batch intake with root + glob controls"
+      "signal": "Batch intake with root + glob controls"
     },
     {
       "title": "Email Consolidation & De-duplication",
       "layer": "Communications",
       "impact": "Merges overlapping exports, preserves strongest dates, and removes redundant rows.",
-      "sanitized_signal": "Cross-export identity + date confidence scoring"
+      "signal": "Cross-export identity + date confidence scoring"
     },
     {
       "title": "Sync Payload Planning",
       "layer": "Notion Operations",
       "impact": "Generates deterministic create/update payload plans before live sync execution.",
-      "sanitized_signal": "Dry-run payload JSONL mode"
+      "signal": "Dry-run payload JSONL mode"
     },
     {
       "title": "Manual Override Governance",
       "layer": "Operator Control",
       "impact": "Allows explicit case-link or no-case directives with reason tracking and replay safety.",
-      "sanitized_signal": "Overrides recorded with mode + rationale"
+      "signal": "Overrides recorded with mode + rationale"
     },
     {
       "title": "Repo Consistency Sweep",
       "layer": "Quality Control",
       "impact": "Flags manifest drift, uncataloged canonical files, and missing sidecar coverage.",
-      "sanitized_signal": "Blocking vs non-blocking report output"
+      "signal": "Blocking vs non-blocking report output"
     },
     {
       "title": "Tactical Brief CLI",
       "layer": "Daily Operations",
       "impact": "Builds matter-specific and daily operating briefs from manifest + case indexes.",
-      "sanitized_signal": "today/case command surfaces"
+      "signal": "today/case command surfaces"
     },
     {
       "title": "Pattern Phenomenology Registry",
       "layer": "Analytics",
       "impact": "Tracks recurring behavioral patterns for longitudinal retrieval and pattern heat.",
-      "sanitized_signal": "Pattern hits grouped by strategic band"
+      "signal": "Pattern hits grouped by strategic band"
     },
     {
       "title": "Character/Cast Indexing",
       "layer": "Knowledge Graph",
       "impact": "Clusters recurring actors and aliases to preserve context across matters.",
-      "sanitized_signal": "Role-based cast cards with matter counts"
+      "signal": "Role-based cast cards with matter counts"
     },
     {
       "title": "Runway Deadline Bands",
       "layer": "Case Management",
       "impact": "Converts raw event dates into urgency bands for immediate triage.",
-      "sanitized_signal": "urgent / soon / planned labels"
+      "signal": "urgent / soon / planned labels"
     },
     {
       "title": "Static Portal App State",
       "layer": "Deployment",
       "impact": "Delivers dashboard + tables + preferences using JSON snapshots and local storage only.",
-      "sanitized_signal": "No backend runtime required"
+      "signal": "No backend runtime required"
     },
     {
       "title": "Billing Readiness Snapshots",
       "layer": "Commercial Ops",
       "impact": "Computes line-item totals from configurable rates for rapid engagement previews.",
-      "sanitized_signal": "Live currency + rate preference toggles"
+      "signal": "Live currency + rate preference toggles"
     },
     {
       "title": "Workflow Packet Staging",
       "layer": "Report Readiness",
       "impact": "Stages chronology, treatment, and damages notes before downstream packet workflows.",
-      "sanitized_signal": "Pre-report packet readiness lane"
+      "signal": "Pre-report packet readiness lane"
+    },
+    {
+      "title": "Brain Skill v12.1 Recall Routing",
+      "layer": "AI Recall",
+      "impact": "Routes Claude to the right source surface for any question so no session starts from zero.",
+      "signal": "Versioned codex routing with read-before-assert discipline"
+    },
+    {
+      "title": "Governance Guardrails & Audit Gate",
+      "layer": "Repo Regulation",
+      "impact": "PR communication standard plus pre-commit guardrails enforce a uniform audit trail across every change.",
+      "signal": "pre-commit + PR audit summary block"
+    },
+    {
+      "title": "Gitleaks Secret Scanning",
+      "layer": "Security",
+      "impact": "Free GHAS-class secret scanning runs on every push to keep credentials out of the corpus.",
+      "signal": ".gitleaks.toml + ignore allowlist"
+    },
+    {
+      "title": "Notion Drift Report",
+      "layer": "Operator Control",
+      "impact": "Read-only Legal Matters audit surfaces drift between repo and Notion without ever writing to Notion.",
+      "signal": "Markdown report + optional JSON sidecar"
+    },
+    {
+      "title": "Watchlist Digest",
+      "layer": "Daily Operations",
+      "impact": "Declarative watchlist over the manifest tracks names, aliases, patterns, and cases the operator cares about.",
+      "signal": "tier + since + oneline digest modes"
+    },
+    {
+      "title": "Cloud Repo Repair Automation",
+      "layer": "Reliability",
+      "impact": "Deterministic cloud runs snapshot, refresh KPIs, run consistency checks, and bundle a handoff report.",
+      "signal": "Branch-first + clean-worktree guards"
+    },
+    {
+      "title": "Deployment Platform Matrix",
+      "layer": "Deployment",
+      "impact": "Cloudflare Pages, Railway bot, and optional Vercel are documented in a single keep/cut runbook.",
+      "signal": "60-second deployment quickstart"
+    },
+    {
+      "title": "Command Platform Foundation",
+      "layer": "Operator Surfaces",
+      "impact": "FastAPI portal + Dockerfile + Railway config establish a multi-user command surface on top of the corpus.",
+      "signal": "portal/ + Dockerfile.portal + railway.toml"
+    },
+    {
+      "title": "Corpus KPI Campaign Block",
+      "layer": "Analytics",
+      "impact": "corpus_kpis.json exposes unanalyzed_active_total and unanalyzed_by_type so backlog can be prioritized by artifact type.",
+      "signal": "Per-type unanalyzed counts"
+    },
+    {
+      "title": "615+ Test Verification Suite",
+      "layer": "Quality Control",
+      "impact": "Parameterized artifact verification (752 tests) runs on every PR — structure, schema, manifest invariants, and per-artifact integrity are enforced on every push.",
+      "signal": "node + python + corpus checks in one workflow"
+    },
+    {
+      "title": "Working Corpus On Disk",
+      "layer": "Showcase",
+      "impact": "78 working artifacts (cases, depositions, transcripts, emails, motions, characters, patterns, billing) demonstrate the platform shape that visitors can browse, fork, and run end-to-end.",
+      "signal": "browseable corpus, deterministic generator, full test coverage"
     }
   ]
 }

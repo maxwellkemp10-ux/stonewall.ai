@@ -97,7 +97,7 @@
       line-height: 1.02;
       letter-spacing: -0.04em;
     }
-    h1 { font-size: clamp(48px, 7vw, 84px); max-width: 11ch; margin-top: 18px; }
+    h1 { font-size: clamp(38px, 7vw, 84px); max-width: 11ch; margin-top: 18px; }
     h2 { font-size: clamp(34px, 4vw, 52px); }
     h3 { font-size: 28px; }
     .hero,
@@ -166,7 +166,117 @@
     .btn:hover,
     .btn-secondary:hover,
     .card:hover,
-    .innovation:hover { transform: translateY(-2px); }
+    .innovation:hover,
+    .matrix-card:hover,
+    .tour-card:hover { transform: translateY(-3px); box-shadow: 0 22px 48px rgba(201,107,60,0.20); border-color: var(--line-strong); }
+
+    /* Quick Tour grid — large clickable buttons that jump to each surface */
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .tour-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .tour-card::after {
+      content: "→";
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 700;
+      transition: transform 180ms ease;
+    }
+    .tour-card:hover::after { transform: translateX(4px); }
+    .tour-card .tour-icon { font-size: 28px; line-height: 1; }
+    .tour-card .tour-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .tour-card h3 {
+      margin: 4px 0 0;
+      font-family: "Newsreader", serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .tour-card p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+    /* Scale comparison table */
+    .scale-table-wrap {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+    }
+    .scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .scale-table thead th {
+      text-align: left;
+      padding: 16px 22px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      font-weight: 700;
+    }
+    .scale-table tbody td {
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .scale-table tbody tr:last-child td { border-bottom: none; }
+    .scale-table tbody tr:hover td { background: rgba(201,107,60,0.05); }
+    .scale-table .num {
+      font-family: "Newsreader", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffd0af;
+    }
+    .scale-table .delta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(98, 200, 145, 0.12);
+      color: #8de7b4;
+      border: 1px solid rgba(98, 200, 145, 0.25);
+    }
+    .scale-table .delta.flat {
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      border-color: var(--line);
+    }
+    @media (max-width: 760px) {
+      .scale-table thead { display: none; }
+      .scale-table tbody td { display: block; padding: 8px 18px; border-bottom: none; }
+      .scale-table tbody tr { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .scale-table tbody tr:last-child { border-bottom: none; }
+    }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -389,6 +499,22 @@
       .matrix-grid { grid-template-columns: 1fr; }
       footer { padding-bottom: 40px; }
     }
+    @media (max-width: 560px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      nav { justify-content: flex-start; gap: 6px; }
+      nav a { padding: 6px 10px; font-size: 13px; }
+      .hero { padding-top: 28px; }
+      .hero p, .section-head p { font-size: 16px; }
+      .stat-tile strong { font-size: 36px; }
+      .scale-table .num { font-size: 17px; }
+      .tour-card { padding: 18px; }
+      .tour-card::after { top: 16px; right: 18px; font-size: 18px; }
+      .tour-card h3 { font-size: 19px; }
+    }
   </style>
 </head>
 <body>
@@ -399,6 +525,7 @@
       <a href="official-brief.html">Official Brief</a>
       <a href="portal/">Portal Demo</a>
       <a href="insights.html">Workflow Notes</a>
+      <a href="https://stonewall.esq">Canon</a>
       <a href="https://github.com/maxwellkemp10-ux/stonewall-showcase">GitHub</a>
     </nav>
   </header>
@@ -411,7 +538,9 @@
         <p>Stonewall is a production-grade legal document intelligence control plane built by a solo litigation attorney. It turns flat files, validated sidecars, AI recall discipline, and static deployment surfaces into a portfolio command dashboard for artifacts, deadlines, workflow readiness, and daily operating visibility.</p>
         <div class="hero-actions">
           <a class="btn" href="portal/">Open Portal Demo</a>
+          <a class="btn-secondary" href="https://stonewall.esq">Open Canon (stonewall.esq)</a>
           <a class="btn-secondary" href="official-brief.html">Read Official Brief</a>
+          <a class="btn-secondary" href="https://github.com/maxwellkemp10-ux/stonewall-showcase">View Source on GitHub</a>
         </div>
         <div class="badge-row">
           <span class="badge">Python 3.12+</span>
@@ -419,18 +548,62 @@
           <span class="badge">Notion Operator Layer</span>
           <span class="badge">Claude Recall Stack</span>
           <span class="badge">GitHub Actions</span>
+          <span class="badge">615+ Test Suite</span>
         </div>
       </div>
       <aside class="panel">
         <strong style="display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;">Live Snapshot</strong>
         <div class="panel-grid">
-          <div class="mini-stat"><strong id="heroCataloged">1,206</strong><span>cataloged artifacts</span></div>
+          <div class="mini-stat"><strong id="heroCataloged">1,887</strong><span>cataloged artifacts</span></div>
           <div class="mini-stat"><strong id="heroCases">64</strong><span>active matters represented</span></div>
           <div class="mini-stat"><strong id="heroPatterns">197</strong><span>behavioral patterns indexed</span></div>
           <div class="mini-stat"><strong id="heroEmails">6,000+</strong><span>emails processed</span></div>
         </div>
-        <p style="margin:18px 0 0;color:var(--muted);font-size:14px;">Publication stack: GitHub Pages for immediate impact and the official brief for print and PDF circulation — two coordinated surfaces telling the same product thesis.</p>
+        <p style="margin:18px 0 0;color:var(--muted);font-size:14px;">Publication stack: GitHub Pages for immediate impact, the official brief for print and PDF circulation, and the public source repo for collaborators who want to read the implementation.</p>
       </aside>
+    </section>
+
+    <section class="section" id="tour" style="padding-top: 24px;">
+      <div class="section-head">
+        <div>
+          <div class="section-tag">Quick Tour</div>
+          <h2>Four surfaces, one product</h2>
+          <p>Jump straight into any layer of the showcase. Each card is a clickable destination — no scavenger hunting for the goods.</p>
+        </div>
+        <div class="aside">The whole stack is static, fork-friendly, and fully runnable in under sixty seconds.</div>
+      </div>
+      <div class="tour-grid">
+        <a class="tour-card" href="portal/">
+          <span class="tour-icon">🖥️</span>
+          <span class="tour-label">Live Demo</span>
+          <h3>Operator Portal</h3>
+          <p>Multi-page dashboard with matters, deadlines, artifacts, patterns, cast, and billing — all from static JSON.</p>
+        </a>
+        <a class="tour-card" href="https://stonewall.esq">
+          <span class="tour-icon">📚</span>
+          <span class="tour-label">Canon</span>
+          <h3>stonewall.esq</h3>
+          <p>The full canonical codices — case codex, character dossiers, phenomenology registry, discovery registry, and the corpus compendium.</p>
+        </a>
+        <a class="tour-card" href="official-brief.html">
+          <span class="tour-icon">📜</span>
+          <span class="tour-label">Long Form</span>
+          <h3>Official Brief</h3>
+          <p>The print-edition product brief for circulation, valuation, and the full architectural argument.</p>
+        </a>
+        <a class="tour-card" href="insights.html">
+          <span class="tour-icon">🧠</span>
+          <span class="tour-label">Deep Cuts</span>
+          <h3>Workflow Notes</h3>
+          <p>The operator-feel commentary explaining why this stack changes what a lawyer can do under pressure.</p>
+        </a>
+        <a class="tour-card" href="https://github.com/maxwellkemp10-ux/stonewall-showcase">
+          <span class="tour-icon">⌨️</span>
+          <span class="tour-label">Source</span>
+          <h3>GitHub Repo</h3>
+          <p>Read the implementation. 752-test verification suite, 78-artifact corpus, CI-enforced voice guard.</p>
+        </a>
+      </div>
     </section>
 
     <section class="section" id="numbers">
@@ -443,12 +616,32 @@
         <div class="aside">The underlying corpus remains Git-tracked, grep-queryable, and validation-friendly, which is the central architectural thesis of the platform and the reason it can serve as both corpus layer and operator surface.</div>
       </div>
       <div class="metrics">
-        <article class="stat-tile"><strong id="metricArtifacts">1,206</strong><span>Artifacts Cataloged</span><p>Manifest-backed catalog with type, date, entities, patterns, and summary metadata.</p></article>
+        <article class="stat-tile"><strong id="metricArtifacts">1,887</strong><span>Artifacts Cataloged</span><p>Manifest-backed catalog with type, date, entities, patterns, and summary metadata.</p></article>
         <article class="stat-tile"><strong id="metricCases">64</strong><span>Active Matters</span><p>Portfolio structure remains legible across a broad litigation workload.</p></article>
         <article class="stat-tile"><strong id="metricPatterns">197</strong><span>Behavioral Patterns</span><p>A full phenomenology registry makes recurring dynamics traceable across the corpus.</p></article>
-        <article class="stat-tile"><strong id="metricCharacters">173</strong><span>Character Profiles</span><p>Role and actor modeling give the archive memory about who drives which outcomes.</p></article>
+        <article class="stat-tile"><strong id="metricCharacters">179</strong><span>Character Profiles</span><p>Role and actor modeling give the archive memory about who drives which outcomes.</p></article>
         <article class="stat-tile"><strong id="metricEmails">6,000+</strong><span>Emails Processed</span><p>Normalized communication flows preserve timeline, leverage, and workflow context.</p></article>
         <article class="stat-tile"><strong id="metricTypes">23</strong><span>Artifact Classes</span><p>Deposition, pleading, email, notes, records, and workflow objects live in one durable catalog.</p></article>
+      </div>
+      <div class="scale-table-wrap" role="region" aria-label="Scale at a glance">
+        <table class="scale-table">
+          <thead>
+            <tr>
+              <th>Surface</th>
+              <th>Earlier Snapshot</th>
+              <th>Current</th>
+              <th>Delta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Manifest Rows</td><td>1,206</td><td><span class="num">1,887</span></td><td><span class="delta">+681</span></td></tr>
+            <tr><td>Analyzed %</td><td>65.2%</td><td><span class="num">83.8%</span></td><td><span class="delta">+18.6 pts</span></td></tr>
+            <tr><td>Validation Errors / Warnings</td><td>0 / 153</td><td><span class="num">0 / 0</span></td><td><span class="delta">−153 warn</span></td></tr>
+            <tr><td>Brain Codex Version</td><td>v10.4</td><td><span class="num">v12.1</span></td><td><span class="delta">+1.7</span></td></tr>
+            <tr><td>Verification Suite</td><td>45 tests</td><td><span class="num">752 tests</span></td><td><span class="delta">+707</span></td></tr>
+            <tr><td>Corpus Artifacts On Disk</td><td>—</td><td><span class="num">78</span></td><td><span class="delta">new</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -483,7 +676,7 @@
 $ rg "Pattern: BONEMAXXED" catalog/index_by_pattern.md</code></pre></article>
         <article class="innovation"><div class="icon">⌨️</div><h3>CLI Intelligence Layer</h3><p>The stdlib-only CLI makes the corpus queryable without standing up a server or a database engine. It handles stats, matter views, pattern lookups, timelines, validation, and artifact inspection from one consistent interface.</p><pre><code>$ python scripts/stonewall.py stats
 $ python scripts/stonewall.py case "Motor Vehicle Case A"</code></pre></article>
-        <article class="innovation"><div class="icon">🧠</div><h3>AI Recall Architecture</h3><p>The brain is explicit recall architecture, not mystery memory. Codex files point the model to source surfaces first, then require reading before assertions, with version lineage preserved through frozen snapshots up to <code>v10.4</code>.</p><pre><code>brain/
+        <article class="innovation"><div class="icon">🧠</div><h3>AI Recall Architecture</h3><p>The brain is explicit recall architecture, not mystery memory. Codex files point the model to source surfaces first, then require reading before assertions, with version lineage preserved through frozen snapshots up to <code>v12.1</code> ("the ultimate cut").</p><pre><code>brain/
   cast_codex.md
   cases_codex.md
   phenomenology_codex.md</code></pre></article>
@@ -492,8 +685,8 @@ transcribe_repo_pdfs.py
 docx_to_verbatim_md.py</code></pre></article>
         <article class="innovation"><div class="icon">🔄</div><h3>Multi-Platform Sync</h3><p>GitHub stores the durable corpus, OneDrive remains the source reservoir, and Notion becomes the operator layer for live matter management, task runway, and daily command views. Cross-reference manifests keep IDs aligned across surfaces.</p><pre><code>python scripts/notion_wire_cases.py
 python scripts/notion_case_dates.py</code></pre></article>
-        <article class="innovation"><div class="icon">🛡️</div><h3>Verification & QC Automation</h3><p>Repo consistency checks, ontology enforcement, sidecar audits, and deployment guards make the output structurally sound. The same discipline that protects the corpus also increases commercial credibility.</p><pre><code>$ python scripts/stonewall.py validate --strict
-0 error(s), 153 warning(s) across 1206 rows</code></pre></article>
+        <article class="innovation"><div class="icon">🛡️</div><h3>Verification & QC Automation</h3><p>Repo consistency checks, ontology enforcement, sidecar audits, gitleaks secret scanning, governance pre-commit hooks, and deployment guards make the output structurally sound. The same discipline that protects the corpus also increases commercial credibility.</p><pre><code>$ python scripts/stonewall.py validate --strict
+0 error(s), 0 warning(s) across 1887 rows</code></pre></article>
         <article class="innovation"><div class="icon">🧭</div><h3>Phenomenology Registry</h3><p>Stonewall tracks a 197-pattern behavioral taxonomy that can be instantiated across artifacts and traced longitudinally across the corpus.</p><pre><code>$ python scripts/stonewall.py pattern "THEARTOFTHEDEALMAXXED"</code></pre></article>
         <article class="innovation"><div class="icon">🖥️</div><h3>Static Portal</h3><p>The portal proves that a multi-page operational dashboard can run as a fully static site from JSON snapshots alone. Dashboard, matters, deadlines, artifacts, patterns, cast, billing-style totals, and local settings all render without a backend in the live build.</p><pre><code>docs/portal/
   index.html
@@ -528,11 +721,11 @@ python scripts/stonewall.py show A1104</code></pre></article>
     <section class="section" id="innovation-matrix">
       <div class="section-head">
         <div>
-          <div class="section-tag">Sanitized Innovation Matrix</div>
-          <h2>Twelve operating innovations rendered for showcase use</h2>
-          <p>This matrix translates high-value innovations from the main Stonewall operating stack into public-safe product language while preserving architecture, workflow utility, and implementation reality.</p>
+          <div class="section-tag">Innovation Matrix</div>
+          <h2>Operating innovations across the Stonewall stack</h2>
+          <p>This matrix walks through the high-value innovations powering the platform — architecture, workflow utility, and the implementation surfaces that ship today.</p>
         </div>
-        <div class="aside">Each card maps one real subsystem into a sanitized design signal so collaborators can see both product polish and operational depth without exposing private matter data.</div>
+        <div class="aside">Each card maps one subsystem to its design signal so collaborators can see product polish and operational depth at the same time.</div>
       </div>
       <div class="matrix-grid" id="innovationMatrix">
         <article class="matrix-card">
@@ -613,21 +806,30 @@ python scripts/stonewall.py show A1104</code></pre></article>
       </div>
       <div class="demo-grid">
         <article class="terminal"><div class="terminal-label">stats</div><pre><code>$ python scripts/stonewall.py stats
-total rows      : 1206
-active          : 1122
-analyzed        : 731 (65.2%)
+total rows      : 1887
+active          : 1604
+tombstoned      : 283
+analyzed        : 1344 (83.8%)
 patterns        : 197
-characters      : 173
+characters      : 179
 cases           : 64</code></pre></article>
         <article class="terminal"><div class="terminal-label">find</div><pre><code>$ python scripts/stonewall.py find "deposition"
 A0198  Public Deposition Transcript    2025-02-28  deposition
 A0441  Expert Deposition Outline       2025-07-16  deposition
 A0917  Corporate Representative Prep   2026-01-11  deposition</code></pre></article>
         <article class="terminal"><div class="terminal-label">validate</div><pre><code>$ python scripts/stonewall.py validate --strict
-0 error(s), 153 warning(s) across 1206 rows
+0 error(s), 0 warning(s) across 1887 rows
 ontology          : pass
 filesystem links  : pass
 date checks       : pass</code></pre></article>
+        <article class="terminal"><div class="terminal-label">verify (CI)</div><pre><code>$ node --test tests/qb1_tracker_helpers.test.mjs tests/email_consolidator.test.mjs
+# tests 9
+# pass 9
+$ python -m unittest tests.test_ingest_onedrive \
+    tests.test_verify_repo_consistency \
+    tests.test_sample_corpus
+Ran 743 tests in 3.083s
+OK</code></pre></article>
       </div>
     </section>
 
@@ -638,7 +840,7 @@ date checks       : pass</code></pre></article>
           <h2>Static dashboard, real product energy</h2>
           <p>The included portal is the operator-facing face of the platform. It demonstrates how structured JSON snapshots can power a dashboard, matter view, deadlines board, artifact browser, and pattern registry with no backend required.</p>
         </div>
-        <div class="aside">Pages is the immediate reveal surface. The official brief is the print edition. Together they present one coherent argument instead of a pile of disconnected docs.</div>
+        <div class="aside">Pages is the immediate reveal surface. The official brief is the print edition. The portal is the live operator-facing demo. Together they present one coherent argument instead of a pile of disconnected docs.</div>
       </div>
       <div class="portal-preview">
         <div class="frame">
@@ -664,6 +866,7 @@ date checks       : pass</code></pre></article>
   <footer class="shell">
     <p>Stonewall demonstrates how a litigation team can build durable document intelligence from disciplined flat files, strong validation, and tightly integrated workflow surfaces rather than a heavyweight proprietary stack.</p>
     <div class="footer-links">
+      <a href="https://stonewall.esq">Canon (stonewall.esq)</a>
       <a href="https://github.com/maxwellkemp10-ux/stonewall-showcase">GitHub Repo</a>
       <a href="official-brief.html">Official Brief</a>
       <a href="portal/">Portal</a>
@@ -716,7 +919,7 @@ date checks       : pass</code></pre></article>
             const impact = document.createElement('p');
             impact.textContent = item.impact || '';
             const signal = document.createElement('code');
-            signal.textContent = item.sanitized_signal || '';
+            signal.textContent = item.signal || '';
             card.appendChild(layer);
             card.appendChild(title);
             card.appendChild(impact);

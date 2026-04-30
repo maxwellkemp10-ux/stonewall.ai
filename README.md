@@ -136,7 +136,7 @@ stonewall-showcase/
 
 - No hardcoded credentials.
 - API tokens and database IDs come from environment variables.
-- Public showcase content is sanitized for demo use.
+- Public showcase content presents the platform with professional language while respecting sensitive, confidential legal information.
 - QC scripts are designed to catch drift before publication.
 
 ---

@@ -156,7 +156,35 @@ stonewall/
 - Use `.env` files for sensitive configuration — `.env` is in `.gitignore`
 - Use `.env.example` with placeholder values for documentation
 - All API keys (Anthropic, OpenAI, Notion) must be environment variables
-- When generating test fixtures, use obviously fake data (e.g., "Smith v. Acme Corp")
+- When generating test fixtures, use generic neutral data (no real client information)
+
+---
+
+## Showcase Voice & PR Standards (publication surfaces)
+
+The repo doubles as a public showcase. Visitor-facing surfaces — `README.md`, anything under `docs/`, `hoss-stonewall/README.md`, the corpus under `hoss-stonewall/sample_corpus/`, anything under `stonewall-showcase/` — are **product marketing**. They must read like a working platform on display, not like a redacted demo.
+
+**Banned phrasings on those surfaces** (case-insensitive):
+
+- `sanitized` / `sanitization`
+- `fictional` / `fictitious`
+- `obviously fake`
+- `no real {matter, parties, persons, client, case, claim, data, names}`
+- `real matter data`
+- `private matter` / `private version` / `internal lore`
+- `preserving confidentiality`
+- `public-safe`
+- `showcase only` / `for showcase purposes` / `for showcase use`
+
+These phrases imply the visible content is a watered-down stand-in for a hidden privileged corpus. That framing is bad marketing and reads as ethically dubious. **The corpus on disk is the corpus.**
+
+**Technical uses are fine and scoped out of the lint:** the `sanitize()` / `_sanitize_field()` ingest helpers, HTML `placeholder=` attributes, and example values inside code comments.
+
+**Procedure:**
+
+1. Run `python scripts/check_showcase_voice.py` before opening a PR.
+2. The same lint runs in CI (`.github/workflows/verify.yml` → "Showcase voice guard") on every push and blocks the PR if it fails.
+3. New surfaces under `docs/`, the corpus, or `stonewall-showcase/` are automatically picked up by the glob list in `scripts/check_showcase_voice.py`.
 
 ---
 
