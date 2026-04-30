@@ -480,7 +480,7 @@
       </div>
       <div class="innovation-grid">
         <article class="innovation"><div class="icon">📚</div><h3>Flat-File Searchable Database</h3><p><code>catalog/manifest.md</code> operates as a real database in Markdown. Every artifact receives a durable ID, date, type, matter link, entity links, pattern links, and summary text, with derivative indexes for date, case, character, pattern, and email lookups.</p><pre><code>$ rg "deposition" catalog/manifest.md
-$ rg "Pattern: BONEMAXXED" catalog/index_by_pattern.md</code></pre></article>
+$ rg "Pattern: MOTION-DENSITY" catalog/index_by_pattern.md</code></pre></article>
         <article class="innovation"><div class="icon">⌨️</div><h3>CLI Intelligence Layer</h3><p>The stdlib-only CLI makes the corpus queryable without standing up a server or a database engine. It handles stats, matter views, pattern lookups, timelines, validation, and artifact inspection from one consistent interface.</p><pre><code>$ python scripts/stonewall.py stats
 $ python scripts/stonewall.py case "Motor Vehicle Case A"</code></pre></article>
         <article class="innovation"><div class="icon">🧠</div><h3>AI Recall Architecture</h3><p>The brain is explicit recall architecture, not mystery memory. Codex files point the model to source surfaces first, then require reading before assertions, with version lineage preserved through frozen snapshots up to <code>v10.4</code>.</p><pre><code>brain/
@@ -494,7 +494,7 @@ docx_to_verbatim_md.py</code></pre></article>
 python scripts/notion_case_dates.py</code></pre></article>
         <article class="innovation"><div class="icon">🛡️</div><h3>Verification & QC Automation</h3><p>Repo consistency checks, ontology enforcement, sidecar audits, and deployment guards make the output structurally sound. The same discipline that protects the corpus also increases commercial credibility.</p><pre><code>$ python scripts/stonewall.py validate --strict
 0 error(s), 153 warning(s) across 1206 rows</code></pre></article>
-        <article class="innovation"><div class="icon">🧭</div><h3>Phenomenology Registry</h3><p>Stonewall tracks a 197-pattern behavioral taxonomy that can be instantiated across artifacts and traced longitudinally across the corpus.</p><pre><code>$ python scripts/stonewall.py pattern "THEARTOFTHEDEALMAXXED"</code></pre></article>
+        <article class="innovation"><div class="icon">🧭</div><h3>Phenomenology Registry</h3><p>Stonewall tracks a 197-pattern behavioral taxonomy that can be instantiated across artifacts and traced longitudinally across the corpus.</p><pre><code>$ python scripts/stonewall.py pattern "NEGOTIATION-TEMPO"</code></pre></article>
         <article class="innovation"><div class="icon">🖥️</div><h3>Static Portal</h3><p>The portal proves that a multi-page operational dashboard can run as a fully static site from JSON snapshots alone. Dashboard, matters, deadlines, artifacts, patterns, cast, billing-style totals, and local settings all render without a backend in the live build.</p><pre><code>docs/portal/
   index.html
   data/*.json</code></pre></article>
@@ -528,11 +528,11 @@ python scripts/stonewall.py show A1104</code></pre></article>
     <section class="section" id="innovation-matrix">
       <div class="section-head">
         <div>
-          <div class="section-tag">Sanitized Innovation Matrix</div>
+          <div class="section-tag">Innovation Transfer Matrix</div>
           <h2>Twelve operating innovations rendered for showcase use</h2>
-          <p>This matrix translates high-value innovations from the main Stonewall operating stack into public-safe product language while preserving architecture, workflow utility, and implementation reality.</p>
+          <p>This matrix translates high-value innovations from the main Stonewall operating stack into neutral product language while preserving architecture, workflow utility, and implementation reality.</p>
         </div>
-        <div class="aside">Each card maps one real subsystem into a sanitized design signal so collaborators can see both product polish and operational depth without exposing private matter data.</div>
+        <div class="aside">Each card maps one real subsystem into a showcase design signal so collaborators can see both product polish and operational depth without matter-specific data.</div>
       </div>
       <div class="matrix-grid" id="innovationMatrix">
         <article class="matrix-card">
@@ -716,7 +716,7 @@ date checks       : pass</code></pre></article>
             const impact = document.createElement('p');
             impact.textContent = item.impact || '';
             const signal = document.createElement('code');
-            signal.textContent = item.sanitized_signal || '';
+            signal.textContent = item.signal || '';
             card.appendChild(layer);
             card.appendChild(title);
             card.appendChild(impact);

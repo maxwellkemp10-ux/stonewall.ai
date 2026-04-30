@@ -43,7 +43,7 @@
     "Map artifacts to matter + pattern surfaces",
     "Run consistency and quality checks",
     "Stage operator payloads and runway boards",
-    "Publish sanitized static surfaces for review"
+    "Publish neutral static surfaces for review"
   ],
   "qc_checks": [
     {
@@ -52,7 +52,7 @@
     },
     {
       "name": "Sidecar coverage",
-      "description": "Canonical PDFs and text assets expose normalized Markdown derivatives."
+      "description": "Canonical PDFs and text assets provide normalized Markdown derivatives."
     },
     {
       "name": "Duplicate-family control",
@@ -78,7 +78,7 @@
     },
     {
       "name": "Reporting lane",
-      "description": "Sanitized operational summaries become publishable showcase artifacts."
+      "description": "Neutral operational summaries become publishable showcase artifacts."
     }
   ]
 }

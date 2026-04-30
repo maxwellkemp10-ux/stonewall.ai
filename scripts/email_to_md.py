@@ -28,7 +28,7 @@ def load_emails():
         return json.load(f)
 
 
-def sanitize(text, max_len=80):
+def clean_cell(text, max_len=80):
     """Clean text for markdown table cells."""
     if not text:
         return ''
@@ -66,9 +66,9 @@ def write_master_index(emails):
             for e in month_emails:
                 date = e.get('dateShort', '')
                 direction = e.get('direction', '')
-                frm = sanitize(e.get('from', ''), 30)
-                to = sanitize(e.get('to', ''), 30)
-                subj = sanitize(e.get('subject', ''), 60)
+                frm = clean_cell(e.get('from', ''), 30)
+                to = clean_cell(e.get('to', ''), 30)
+                subj = clean_cell(e.get('subject', ''), 60)
                 f.write(f'| {date} | {direction} | {frm} | {to} | {subj} |\n')
             f.write('\n')
 

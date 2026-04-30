@@ -55,13 +55,13 @@ ARCHIVE_TAG_OPTIONS = {
 }
 AMBIGUOUS_KEYWORDS = {
     # Add common ambiguous keywords from your case names that could match multiple matters.
-    # Example: "adams", "clark", "cook", "lee", "smith"
+    # Example: "alpha", "beta", "gamma", "sample"
 }
 CASE_CONTEXT_MARKERS = {
     "claim", "complaint", "court", "cme", "depo", "deposition", "disco",
     "discovery", "hearing", "legal hold", "mediation", "motion", "order",
     "plaintiff", "proposal", "rog", "rtp", "rfa", "settlement", "subpoena",
-    "sdt", "trial", "ups", "v.",
+    "sdt", "trial", "carrier", "v.",
 }
 
 
@@ -1137,7 +1137,7 @@ def classify_artifact(path: Path, extracted_text: str) -> tuple[str, list[str]]:
         tags.add("teams")
         if suffix in {".pdf", ".png", ".jpg", ".jpeg"}:
             tags.add("screenshot")
-            return "Kabuki Evidence", sorted(tags)
+            return "Workflow Evidence", sorted(tags)
         return "Teams Archive", sorted(tags)
     if any(word in path_text for word in ("chapter", "book", "notes_from", "notes from")):
         tags.add("narrative")
@@ -1150,7 +1150,7 @@ def classify_artifact(path: Path, extracted_text: str) -> tuple[str, list[str]]:
         return "Case Record", sorted(tags)
     if any(word in extracted_text.lower() for word in ("teams", "chat", "message")) and suffix in {".pdf", ".png", ".jpg", ".jpeg"}:
         tags.update({"teams", "screenshot"})
-        return "Kabuki Evidence", sorted(tags)
+        return "Workflow Evidence", sorted(tags)
     return "Misc Evidence", sorted(tags)
 
 
@@ -1536,7 +1536,7 @@ def normalize_path_for_export(path_str: str, source_root: str = "") -> str:
         filename = norm.rsplit("/", 1)[-1]
         return f"{source_root}/{filename}"
     # No anchor and no source_root — fall back to bare filename to avoid
-    # leaking machine-specific absolute paths.
+    # emitting machine-specific absolute paths.
     return norm.rsplit("/", 1)[-1]
 
 

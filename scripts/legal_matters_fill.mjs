@@ -52,54 +52,12 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 // Case keyword mapping for email matching
 const CASE_EMAIL_KEYS = {
-  "egan": ["egan", "howard, mark", "mark howard", "ab5055423", "ab505-542", "karly christine", "tony dante", "2025-ca-006628"],
-  "libroth": ["libroth", "turner, oswin", "ab505530729", "ab505-530729", "guttentag", "karighan", "brozyna"],
-  "boy": ["boy, colette", "colette boy", "muller, vincent", "ab505551419", "ab505-551419", "spencer cutts"],
-  "nunez": ["nunez", "jet star", "md-4233", "morales serrano", "irizarry", "ron bone", "siverson", "23-ca-013095"],
-  "griffith": ["griffith", "noble, joseph", "ab505537043", "ab505-537043", "yalkin gencel"],
-  "sheppard": ["sheppard", "gomez, enrique", "ab505545070", "ab505-545070", "sam powers"],
-  "negrette": ["negrette", "retenio", "ab505538485", "ab505-538485", "ginger miranda", "harran udell"],
-  "harrigan": ["harrigan", "ab505553482", "ab505-553482", "dara elstein"],
-  "rivera": ["rivera, roberto", "roberto rivera", "rugama", "ab505545619", "ab505-545619"],
-  "small": ["small, samuel", "samuel small", "matteson", "ab505530064", "ab505-530064"],
-  "adams": ["adams, talonda", "antares star", "ab505518094"],
-  "mitchell": ["mitchell, calvin", "elder, charles", "ab505543276"],
-  "clark": ["clark, quinella", "p505592779", "joseph carey"],
-  "twilley": ["twilley", "ab505540938", "andrew yarnell"],
-  "oberry": ["oberry", "coutain", "ab505543219"],
-  "salako": ["salako", "buckner", "ab505554064"],
-  "bartleson": ["bartleson", "ricketts", "ab505561347"],
-  "ickes": ["ickes", "ab505558085", "ab505-558085"],
-  "nicolas": ["nicolas, josiah", "behlau", "ab505562397"],
-  "skaggs": ["skaggs", "ab505558389"],
-  "cavero": ["cavero", "ab505557099"],
-  "hronek": ["hronek", "cuesta carrasquillo", "ab505561221"],
-  "deiter": ["deiter", "ab505561221"],
-  "cook": ["cook, joan", "ab505562864"],
-  "mcleod": ["mcleod", "bruza", "ab505562983"],
-  "ortiz": ["ortiz, maribel", "ab505563228"],
-  "patterson": ["patterson, robert", "cruz, amber"],
-  "peralta": ["peralta", "ab505533579", "perlata"],
-  "basher": ["mohammad-basher", "basher, diana", "gowan, james", "ab50554968"],
-  "sanchidrian": ["sanchidrian", "ab505554187"],
-  "hoffman": ["hoffman, montanna", "ab505547759"],
-  "rojas": ["rojas", "perry, douglas", "ab505559577"],
-  "jemison": ["jemison", "castro, jonathan", "ab505556970"],
-  "miller": ["miller, alejandra", "tavarez", "ab505523159"],
-  "ruiz": ["ruiz v. ups", "ab505492224"],
-  "bowen": ["bowen", "ab505554727"],
-  "manley": ["manley", "ws tampa", "2022-ca-010830"],
-  "wachendorf": ["wachendorf", "koontz", "ab505549844"],
-  "mason": ["mason, zaiden", "copeland, ralph", "ab505543739"],
-  "lee": ["higdon", "brunney", "ab505518698"],
-  "ahmed": ["ahmed", "azeez", "ab505-549689"],
-  "robbins": ["robbins, jade"],
-  "decker": ["decker", "stubbins", "ab505546502"],
-  "craig": ["craig, norman", "ab505-507639"],
-  "amiri": ["amiri", "ab505542578"],
-  "abhilash": ["abhilash", "reddy", "kindell", "ab505553610"],
-  "robinson": ["robinson"],
-  "villanueva": ["villanueva"],
+  "matter_01": ["matter 01", "driver alpha", "sample-001"],
+  "matter_02": ["matter 02", "claimant beta", "sample-002"],
+  "matter_03": ["matter 03", "facility gamma", "sample-003"],
+  "matter_04": ["matter 04", "witness delta", "sample-004"],
+  "matter_05": ["matter 05", "records epsilon", "sample-005"],
+  "matter_06": ["matter 06", "coverage zeta", "sample-006"],
 };
 
 // Date extraction patterns
@@ -136,7 +94,7 @@ function classifyDate(context) {
   if (/depo|transcript/i.test(context)) return "depo";
   if (/cme|compulsory|exam/i.test(context)) return "cme";
   if (/complaint\s*filed|filing\s*date|date\s*filed/i.test(context)) return "complaint_filed";
-  if (/loss|accident|incident|dol|crash|collision/i.test(context)) return "dol";
+  if (/loss|accident|event|dol|crash|collision/i.test(context)) return "dol";
   if (/deadline|due|respond|response/i.test(context)) return "deadline";
   return null;
 }

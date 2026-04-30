@@ -61,7 +61,7 @@ class VerifyRepoConsistencyTests(unittest.TestCase):
             (repo_root / "sources" / "variants" / "transcripts" / "call.docx").write_text(
                 "same call in docx", encoding="utf-8"
             )
-            (repo_root / "sources" / "depositions" / "Talonda_Adams_101025_Deposition_Verbatim.md").write_text(
+            (repo_root / "sources" / "depositions" / "Sample_Deposition_Verbatim.md").write_text(
                 "indexed elsewhere", encoding="utf-8"
             )
             (repo_root / "sources" / "skills" / "qed_helper.mjs").write_text(
@@ -179,7 +179,7 @@ class VerifyRepoConsistencyTests(unittest.TestCase):
             manifest_path = repo_root / "catalog" / "manifest.md"
             manifest_path.write_text("# Manifest\n", encoding="utf-8")
 
-            (repo_root / "sources" / "depositions" / "Talonda_Adams_101025_Deposition_Verbatim.md").write_text(
+            (repo_root / "sources" / "depositions" / "Sample_Deposition_Verbatim.md").write_text(
                 "indexed elsewhere", encoding="utf-8"
             )
             (repo_root / "sources" / "emails" / "md" / "emails_2026_03.md").write_text(

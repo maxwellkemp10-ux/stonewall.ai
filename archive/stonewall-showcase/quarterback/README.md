@@ -24,7 +24,7 @@ That is why Stonewall feels coherent. The same source of truth drives the CLI, t
 
 ### CLI intelligence layer
 
-The stdlib-only CLI exposes stats, search, matter views, timelines, patterns, and validation from one portable surface.
+The stdlib-only CLI presents stats, search, matter views, timelines, patterns, and validation from one portable surface.
 
 ### AI recall architecture
 
