@@ -73,12 +73,18 @@
     }
     h1 {
       margin: 14px 0 0;
-      font-size: clamp(52px, 7vw, 88px);
+      font-size: clamp(38px, 7vw, 88px);
       max-width: 11ch;
     }
     h2 {
       margin: 34px 0 0;
-      font-size: clamp(30px, 4vw, 42px);
+      font-size: clamp(26px, 4vw, 42px);
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(var(--max), calc(100% - 24px)); padding: 18px 0 36px; }
+      .page { padding: 22px; border-radius: 22px; }
+      p, li { font-size: 16px; line-height: 1.65; }
+      .quote { font-size: 16px; padding: 14px 16px; }
     }
     p, li {
       color: var(--muted);
@@ -125,6 +131,8 @@
       <a href="./">Showcase</a>
       <a href="portal/">Portal Demo</a>
       <a href="insights.html">Workflow Notes</a>
+      <a href="https://stonewall.esq">Canon</a>
+      <a href="https://github.com/maxwellkemp10-ux/stonewall-showcase">GitHub</a>
     </nav>
 
     <article class="page">
@@ -149,7 +157,7 @@
       <h2>What distinguishes the system</h2>
       <ul>
         <li>A flat-file manifest functions as a durable searchable database while remaining human-readable and Git-trackable.</li>
-        <li>A stdlib-only CLI exposes stats, search, case, timeline, pattern, validation, and doctor workflows directly from the corpus.</li>
+        <li>A stdlib-only CLI presents stats, search, case, timeline, pattern, validation, and doctor workflows directly from the corpus.</li>
         <li>A versioned AI brain uses source-routed recall rather than invisible memorization.</li>
         <li>Automated ingestion turns PDFs, DOCX files, screenshots, and email exports into searchable sidecars and normalized metadata.</li>
         <li>Verification gates make the system trustworthy by design instead of trustworthy by aspiration.</li>

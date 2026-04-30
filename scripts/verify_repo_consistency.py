@@ -16,7 +16,7 @@ IGNORE_SOURCE_PARTS = {"onedrive_ingest", "__pycache__"}
 IGNORE_SOURCE_NAMES = {".gitkeep", "README.md"}
 IGNORE_EXACT_SOURCE_PATHS = {
     "sources/emails/consolidated_emails.json",
-    "sources/skills/qb1_tracker_helpers.mjs",
+    "sources/skills/tracker_helpers.mjs",
 }
 IGNORE_SOURCE_PATH_PREFIXES = {
     "sources/depositions/",

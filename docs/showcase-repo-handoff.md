@@ -57,10 +57,10 @@ gh run view <run-id> --repo maxwellkemp10-ux/stonewall-showcase
 Before calling the site finished, grep the public copy for drift away from the product thesis.
 
 ```bash
-rg -n -i "sanitized|kabuki|unsafe|privileged|private version|internal lore" docs README.md docs/overview/official-brief.md
+python3 scripts/check_showcase_voice.py
 ```
 
-The result should be empty on the publication surfaces.
+The script scans publication surfaces and fails on any apologetic or hedging language. The result should be a clean exit on a publishable branch.
 
 ## Release Checklist
 

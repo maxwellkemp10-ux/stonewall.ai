@@ -78,7 +78,7 @@ class IngestOneDriveTests(unittest.TestCase):
         self.assertEqual(tags, ["discovery", "forensics"])
 
     def test_derive_case_tag_preserves_multi_plaintiff_name(self) -> None:
-        self.assertEqual(derive_case_tag("Mason/Zaiden v. UPS"), "Mason/Zaiden")
+        self.assertEqual(derive_case_tag("Alpha/Beta v. Logistics Co"), "Alpha/Beta")
 
     def test_collect_input_files_applies_limit_after_global_sort(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

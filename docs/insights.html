@@ -77,8 +77,14 @@
       letter-spacing: -0.03em;
       line-height: 0.98;
     }
-    h1 { font-size: clamp(44px, 6vw, 72px); }
-    h2 { font-size: clamp(30px, 4vw, 42px); }
+    h1 { font-size: clamp(36px, 6vw, 72px); }
+    h2 { font-size: clamp(26px, 4vw, 42px); }
+    @media (max-width: 560px) {
+      .shell { padding: 18px 0 32px; }
+      p { font-size: 16px; }
+      .hero, .section { padding: 18px; border-radius: 22px; }
+      .nav a { padding: 6px 10px; font-size: 11px; }
+    }
     p {
       margin: 14px 0 0;
       color: var(--muted);
@@ -105,6 +111,8 @@
       <a href="showcase.html">Showcase</a>
       <a href="official-brief.html">Official Brief</a>
       <a href="portal/">Portal Demo</a>
+      <a href="https://stonewall.esq">Canon</a>
+      <a href="https://github.com/maxwellkemp10-ux/stonewall-showcase">GitHub</a>
     </nav>
 
     <section class="hero">

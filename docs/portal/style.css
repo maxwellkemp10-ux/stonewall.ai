@@ -668,4 +668,24 @@ table.data tr:last-child td {
   .playbook-grid {
     grid-template-columns: 1fr;
   }
+
+  .portal-top__inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 0;
+  }
+
+  .topbar-right {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .external-links {
+    width: 100%;
+  }
+
+  .portal-nav button {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
 }

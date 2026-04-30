@@ -34,7 +34,7 @@ DRY_RUN = os.environ.get('DRY_RUN', '0') == '1'
 LEGAL_MATTERS_DB = os.environ.get('NOTION_LEGAL_MATTERS_DB', 'YOUR_LEGAL_MATTERS_DATABASE_ID')
 ALL_EMAIL_DB = os.environ.get('NOTION_ALL_EMAIL_DB', 'YOUR_ALL_EMAIL_DATABASE_ID')
 EMAIL_LEGACY_DB = os.environ.get('NOTION_EMAIL_LEGACY_DB', 'YOUR_EMAIL_LEGACY_DATABASE_ID')
-KABUKI_INCIDENTS_DB = os.environ.get('NOTION_INCIDENTS_DB', 'YOUR_INCIDENTS_DATABASE_ID')
+WORKFLOW_EVENTS_DB = os.environ.get('NOTION_EVENTS_DB', 'YOUR_EVENTS_DATABASE_ID')
 STONEWALL_ARCHIVE_DB = os.environ.get('NOTION_ARCHIVE_DB', 'YOUR_ARCHIVE_DATABASE_ID')
 
 # ── API Helper ──────────────────────────────────────────────────────────────
@@ -122,7 +122,7 @@ def build_case_matchers(cases):
             for ap in amp_parts[1:]:  # skip "UPS"
                 ap = ap.strip()
                 ap = re.sub(r'\s*\(.*?\)\s*', '', ap)
-                if ap and len(ap) > 2 and ap.lower() not in ('ups', 'jet star', 'antares'):
+                if ap and len(ap) > 2 and ap.lower() not in ('carrier', 'logistics co', 'sample account'):
                     keywords.add(ap.lower())
         
         # Build regex from keywords
@@ -168,7 +168,7 @@ def match_subject_to_case(subject, matchers):
     matches = []
     
     # Common words that happen to be case names — require claim number or "v." context
-    AMBIGUOUS_KEYWORDS = {'small', 'cook', 'clark', 'noble', 'miller', 'adams', 'howard', 'freeman', 'elder'}
+    AMBIGUOUS_KEYWORDS = {'alpha', 'beta', 'gamma', 'delta', 'sample', 'matter'}
     
     for m in matchers:
         # Claim number match (highest confidence)
@@ -372,28 +372,28 @@ def wire_legacy_emails(matchers, relation_prop):
     
     print(f'  ✓ Legacy emails: {matched} linked')
 
-# ── Phase 4: Wire Incidents ─────────────────────────────────────────────────
-def wire_incidents(matchers):
+# ── Phase 4: Wire Events ────────────────────────────────────────────────────
+def wire_events(matchers):
     """
-    Incidents don't have a Case relation yet. Add one and try to match
-    from incident names and verbatim quotes.
+    Workflow events don't have a Case relation yet. Add one and try to match
+    from event names and verbatim quotes.
     """
-    prop_name = ensure_case_relation(KABUKI_INCIDENTS_DB, 'Incidents')
+    prop_name = ensure_case_relation(WORKFLOW_EVENTS_DB, 'Events')
     
-    incidents = paginate_db(KABUKI_INCIDENTS_DB)
-    print(f'  Found {len(incidents)} incidents')
+    events = paginate_db(WORKFLOW_EVENTS_DB)
+    print(f'  Found {len(events)} events')
     
     matched = 0
-    for inc in incidents:
-        props = inc.get('properties', {})
-        page_id = inc['id']
+    for event in events:
+        props = event.get('properties', {})
+        page_id = event['id']
         
         existing_rel = props.get(prop_name, {})
         if existing_rel.get('type') == 'relation' and existing_rel.get('relation'):
             continue
         
-        # Try matching from incident name
-        name = ''.join(t.get('plain_text', '') for t in props.get('Incident Name', {}).get('title', []))
+        # Try matching from event name
+        name = ''.join(t.get('plain_text', '') for t in props.get('Event Name', {}).get('title', []))
         case_ids = match_subject_to_case(name, matchers)
         
         if case_ids and not DRY_RUN:
@@ -408,7 +408,7 @@ def wire_incidents(matchers):
             except:
                 pass
     
-    print(f'  ✓ Incidents: {matched} linked')
+    print(f'  ✓ Events: {matched} linked')
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
@@ -452,9 +452,9 @@ def main():
     print('\n═══ Phase 3: Wiring legacy emails ═══')
     wire_legacy_emails(matchers, legacy_rel)
     
-    # Step 6: Wire incidents
-    print('\n═══ Phase 4: Wiring incidents ═══')
-    wire_incidents(matchers)
+    # Step 6: Wire events
+    print('\n═══ Phase 4: Wiring events ═══')
+    wire_events(matchers)
     
     print('\n═══ COMPLETE ═══')
     print('Next steps:')

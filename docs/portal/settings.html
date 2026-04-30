@@ -629,11 +629,11 @@
             <div class="field-grid">
               <div class="field">
                 <label for="first-name">First name</label>
-                <input id="first-name" type="text" value="Maxwell" autocomplete="given-name">
+                <input id="first-name" type="text" value="" placeholder="First name" autocomplete="given-name">
               </div>
               <div class="field">
                 <label for="last-name">Last name</label>
-                <input id="last-name" type="text" value="Kemp" autocomplete="family-name">
+                <input id="last-name" type="text" value="" placeholder="Last name" autocomplete="family-name">
               </div>
               <div class="field">
                 <label for="role">Role</label>
@@ -648,7 +648,7 @@
               </div>
               <div class="field">
                 <label for="firm-name">Firm name</label>
-                <input id="firm-name" type="text" value="Kemp &amp; Associates" autocomplete="organization">
+                <input id="firm-name" type="text" value="" placeholder="Firm name" autocomplete="organization">
               </div>
               <div class="field field-grid single">
                 <label for="timezone">Timezone</label>
@@ -943,10 +943,10 @@
             </div>
             <div class="danger-row">
               <div>
-                <strong>Purge local index</strong>
+                <strong>Clear local index</strong>
                 <span>Removes the local file index used by <code>verify_repo_consistency.py</code>. A full consistency run will rebuild it.</span>
               </div>
-              <button class="btn-danger" type="button" onclick="confirmDanger('Purge the local index? This cannot be undone.')">Purge index</button>
+              <button class="btn-danger" type="button" onclick="confirmDanger('Clear the local index? This cannot be undone.')">Clear index</button>
             </div>
           </div>
         </section>

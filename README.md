@@ -124,7 +124,7 @@ stonewall-showcase/
 ├── agents/               # AI agent configuration
 ├── tests/                # validation and regression tests
 ├── archive/              # archived publication-runbook reference material
-├── hoss-stonewall/       # corpus reference material and tactical standards
+├── sample-corpus/        # neutral sample reference material for demos
 ├── .github/workflows/    # CI/CD pipelines
 ├── .env.example          # required environment variables
 └── README.md
@@ -136,7 +136,7 @@ stonewall-showcase/
 
 - No hardcoded credentials.
 - API tokens and database IDs come from environment variables.
-- Public showcase content is sanitized for demo use.
+- Public showcase content uses neutral sample labels for demo use.
 - QC scripts are designed to catch drift before publication.
 
 ---

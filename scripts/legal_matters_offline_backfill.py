@@ -92,7 +92,7 @@ def choose_email_date(candidates: list[str]) -> str | None:
     return top[0] if top else None
 
 
-def _sanitize_field(value: str) -> str:
+def _clean_field(value: str) -> str:
     """Collapse embedded newlines/whitespace and truncate at 200 chars."""
     text = re.sub(r"[\r\n]+", " ", value)
     text = re.sub(r"\s{2,}", " ", text).strip()
@@ -260,8 +260,8 @@ def build_rows(
                 complaint_date = chosen
                 source = "emails.complaint_context"
 
-        plaintiff = _sanitize_field(rec.get("plaintiff", "") or "")
-        ups_driver = _sanitize_field(rec.get("ups_driver", "") or "")
+        plaintiff = _clean_field(rec.get("plaintiff", "") or "")
+        ups_driver = _clean_field(rec.get("ups_driver", "") or "")
         claim_number = rec.get("claim") or rec.get("claim_number") or ""
         dol = dates_rec.get("date_of_loss", "") or rec.get("date_of_loss", "") or ""
 

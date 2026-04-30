@@ -35,6 +35,36 @@
       "layer": "daily operations",
       "summary": "today/case command paths convert raw corpus state into immediate operator runway and next actions.",
       "signal": "daily + matter CLI brief modes"
+    },
+    {
+      "title": "Brain Skill v12.1",
+      "layer": "ai recall",
+      "summary": "Versioned recall routing aims Claude at canonical codex surfaces first, with read-before-assert discipline.",
+      "signal": "v12.1 codex + frozen lineage"
+    },
+    {
+      "title": "Governance + Audit Gate",
+      "layer": "repo regulation",
+      "summary": "Pre-commit hooks plus PR communication standard force a uniform audit trail across every change.",
+      "signal": "PR_CHECKLIST_SUMMARY block"
+    },
+    {
+      "title": "Notion Drift Report",
+      "layer": "operator control",
+      "summary": "Read-only Legal Matters audit surfaces drift between repo and Notion with no Notion writes.",
+      "signal": "markdown + JSON sidecar"
+    },
+    {
+      "title": "Watchlist Digest",
+      "layer": "daily operations",
+      "summary": "Declarative watchlist tracks the names, aliases, patterns, and cases the operator wants to keep warm.",
+      "signal": "tier + since + oneline modes"
+    },
+    {
+      "title": "Cloud Repo Repair",
+      "layer": "reliability",
+      "summary": "Deterministic cloud runs snapshot, refresh KPIs, run consistency checks, and bundle a handoff report.",
+      "signal": "branch-first + clean worktree"
     }
   ],
   "pipeline": [
@@ -43,7 +73,7 @@
     "Map artifacts to matter + pattern surfaces",
     "Run consistency and quality checks",
     "Stage operator payloads and runway boards",
-    "Publish sanitized static surfaces for review"
+    "Publish static surfaces for review"
   ],
   "qc_checks": [
     {
@@ -52,7 +82,7 @@
     },
     {
       "name": "Sidecar coverage",
-      "description": "Canonical PDFs and text assets expose normalized Markdown derivatives."
+      "description": "Canonical PDFs and text assets provide normalized Markdown derivatives."
     },
     {
       "name": "Duplicate-family control",
@@ -78,7 +108,7 @@
     },
     {
       "name": "Reporting lane",
-      "description": "Sanitized operational summaries become publishable showcase artifacts."
+      "description": "Operational summaries become publishable artifacts on the showcase site."
     }
   ]
 }
