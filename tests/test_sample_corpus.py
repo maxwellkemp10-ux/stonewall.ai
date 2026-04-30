@@ -59,10 +59,13 @@ class CorpusArtifactTests(unittest.TestCase):
 
 def _make_check(path: Path, check: str):
     def test(self: unittest.TestCase) -> None:
-        text = path.read_text(encoding="utf-8")
         if check == "exists":
             self.assertTrue(path.exists(), f"missing artifact: {path}")
-        elif check == "non_empty":
+            return
+        if not path.exists():
+            self.fail(f"artifact missing, cannot run '{check}' check: {path}")
+        text = path.read_text(encoding="utf-8")
+        if check == "non_empty":
             self.assertGreater(path.stat().st_size, 100,
                                f"artifact too small: {path}")
         elif check == "is_utf8":

@@ -31,8 +31,8 @@ Every artifact is exercised by **9 checks** in
 9. `body_has_content`
 
 That produces **702 per-artifact tests + 5 corpus-wide invariants =
-707 tests** in this module alone, contributing to the showcase's 615+ test
-verification suite.
+707 tests** in this module alone, contributing to the showcase's 700+
+test verification suite.
 
 ## Regenerating
 

@@ -28,7 +28,6 @@ Exceptions:
 - Function names and identifiers like ``sanitize`` / ``_sanitize_field`` /
   ``sanitize()`` (whitespace normalizers in the ingest scripts) are real
   engineering and are scoped out by the SCAN_GLOBS list.
-- HTML attributes like ``placeholder="..."`` are scoped out the same way.
 
 Exit code 0 = clean. Exit code 1 = at least one banned phrase found.
 """
@@ -63,8 +62,8 @@ SCAN_EXCLUDES = {
 }
 
 BANNED_PATTERNS = (
-    re.compile(r"\bsanitized\b", re.IGNORECASE),
-    re.compile(r"\bsanitization\b", re.IGNORECASE),
+    re.compile(r"(?<![A-Za-z0-9_])sanitized(?![A-Za-z0-9_])", re.IGNORECASE),
+    re.compile(r"(?<![A-Za-z0-9_])sanitization(?![A-Za-z0-9_])", re.IGNORECASE),
     re.compile(r"\bfictional\b", re.IGNORECASE),
     re.compile(r"\bfictitious\b", re.IGNORECASE),
     re.compile(r"\bobviously fake\b", re.IGNORECASE),
@@ -98,6 +97,7 @@ def scan(path: Path) -> list[tuple[int, str, str]]:
     try:
         text = path.read_text(encoding="utf-8")
     except UnicodeDecodeError:
+        hits.append((0, "<decode-error>", f"File is not valid UTF-8: {path}"))
         return hits
     for lineno, line in enumerate(text.splitlines(), start=1):
         for pattern in BANNED_PATTERNS:
