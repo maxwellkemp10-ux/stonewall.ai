@@ -5,9 +5,9 @@
 Stonewall turns scattered emails, pleadings, medical records, deposition material,
 spreadsheets, and notes into a searchable, validated, AI-ready litigation corpus.
 
-[![Live Showcase](https://img.shields.io/badge/Live-stonewall.esq-c96b3c?style=for-the-badge)](https://stonewall.esq/)
-[![Portal Demo](https://img.shields.io/badge/Open-Portal_Demo-111827?style=for-the-badge)](https://stonewall.esq/portal/)
-[![Official Brief](https://img.shields.io/badge/Read-Official_Brief-f4ede3?style=for-the-badge&labelColor=171310)](https://stonewall.esq/official-brief.html)
+[![Stonewall Home](https://img.shields.io/badge/Home-stonewall.esq-c96b3c?style=for-the-badge)](https://stonewall.esq/)
+[![Showcase Pages](https://img.shields.io/badge/Showcase-GitHub_Pages-111827?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
+[![Operator App](https://img.shields.io/badge/App-app.stonewall.esq-f4ede3?style=for-the-badge&labelColor=171310)](https://app.stonewall.esq/)
 
 ---
 
@@ -65,10 +65,13 @@ Stonewall is that layer.
 
 ## Product surfaces
 
-- **[Live showcase](https://stonewall.esq/)** — executive overview and product narrative.
-- **[Portal demo](https://stonewall.esq/portal/)** — dashboard-style operator experience.
-- **[Official brief](https://stonewall.esq/official-brief.html)** — polished business and architecture brief.
-- **[Workflow notes](https://stonewall.esq/insights.html)** — implementation and operating model notes.
+- **[Stonewall home](https://stonewall.esq/)** — canonical public product narrative.
+- **[Showcase Pages](https://maxwellkemp10-ux.github.io/stonewall-showcase/)** — public engineering exhibit for this repository.
+- **[Operator app](https://app.stonewall.esq/)** — authenticated command cockpit.
+- **[Graph demo](https://stonewall.esq/portal/#graph)** — aggregate visual proof on the public front door.
+
+`stonewall.esq` is owned by the canonical Stonewall publishing stack. This
+showcase repository publishes through GitHub Pages without a custom apex claim.
 
 ---
 
