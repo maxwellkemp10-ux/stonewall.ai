@@ -1,6 +1,6 @@
 # Stonewall Showcase
 
-Stonewall is a legal document intelligence platform built as a litigation control plane. This page is the canonical showcase narrative entrypoint.
+Stonewall is a legal document intelligence platform built as a litigation control plane. This page is the showcase narrative entrypoint.
 
 Start with [Quarterback](../../archive/stonewall-showcase/quarterback/README.md). From there, the documentation branches into the official brief, the architecture, the workflow layer, and the publication runbook.
 
@@ -14,6 +14,7 @@ Start with [Quarterback](../../archive/stonewall-showcase/quarterback/README.md)
 
 ## Companion surfaces
 
-- Live site: https://stonewall.esq/
-- Official brief: https://stonewall.esq/official-brief.html
-- Portal demo: https://stonewall.esq/portal/
+- GitHub Pages exhibit: https://maxwellkemp10-ux.github.io/stonewall-showcase/
+- Official brief: https://maxwellkemp10-ux.github.io/stonewall-showcase/official-brief.html
+- Portal demo: https://maxwellkemp10-ux.github.io/stonewall-showcase/portal/
+- Stonewall home: https://stonewall.esq/
