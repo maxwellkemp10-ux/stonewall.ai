@@ -50,7 +50,7 @@ for (const e of emails) {
   // Extract claim numbers from subject lines (AB505XXXXXX or P505XXXXXX patterns)
   const claims = subj.match(/[A-Z]{1,2}505\d{5,7}/gi) || [];
   for (const cl of claims) {
-    const key = cl.toUpperCase().replace(/^AB505/, 'AB505').replace(/-/g, '');
+    const key = cl.toUpperCase().replace(/-/g, '');
     if (!emailsByClaim.has(key)) emailsByClaim.set(key, []);
     emailsByClaim.get(key).push(e);
   }
