@@ -1,10 +1,16 @@
 {
   "artifacts": [
-    { "id": "A0198", "type": "deposition", "matter": "M-1088", "summary": "Public deposition transcript", "date": "2025-02-28" },
-    { "id": "A0441", "type": "outline", "matter": "M-1042", "summary": "Expert deposition outline", "date": "2025-07-16" },
-    { "id": "A0917", "type": "prep", "matter": "M-1088", "summary": "Corporate representative prep", "date": "2026-01-11" },
-    { "id": "A0623", "type": "email", "matter": "M-1101", "summary": "Carrier correspondence thread", "date": "2025-11-03" },
-    { "id": "A0888", "type": "filing", "matter": "M-1124", "summary": "Third amended complaint", "date": "2025-09-19" },
-    { "id": "A0301", "type": "medical", "matter": "M-1042", "summary": "Treatment ledger export", "date": "2025-12-02" }
+    { "id": "D0001", "type": "deposition", "matter": "M0002", "summary": "Witness outline — Doe v. Massive Dynamic", "date": "2025-02-02" },
+    { "id": "D0002", "type": "deposition", "matter": "M0004", "summary": "Witness outline — Brown v. Wonka Industries", "date": "2025-03-03" },
+    { "id": "D0003", "type": "deposition", "matter": "M0005", "summary": "Witness outline — Davis v. Aperture Hauling", "date": "2025-04-04" },
+    { "id": "D0005", "type": "deposition", "matter": "M0010", "summary": "Witness outline — Jackson v. Hooli Transport", "date": "2025-06-06" },
+    { "id": "X0001", "type": "motion", "matter": "M0008", "summary": "Motion to compel — Anderson v. Soylent Transport", "date": "2025-09-10" },
+    { "id": "X0003", "type": "motion", "matter": "M0003", "summary": "Motion to compel — Roe v. Wayne Logistics", "date": "2025-11-01" },
+    { "id": "X0007", "type": "motion", "matter": "M0011", "summary": "Motion to compel — White v. Dunder Mifflin", "date": "2026-01-15" },
+    { "id": "E0002", "type": "email", "matter": "M0001", "summary": "Counsel correspondence — Jones v. Umbrella Shipping", "date": "2025-10-05" },
+    { "id": "E0006", "type": "email", "matter": "M0007", "summary": "Discovery update thread — Taylor v. Globex Logistics", "date": "2025-12-12" },
+    { "id": "E0010", "type": "email", "matter": "M0012", "summary": "Carrier correspondence — Harris v. Octan Freight", "date": "2026-02-20" },
+    { "id": "B0003", "type": "billing", "matter": "M0006", "summary": "Period billing statement — Wilson v. Strickland Propane", "date": "2026-03-01" },
+    { "id": "B0005", "type": "billing", "matter": "M0009", "summary": "Period billing statement — Thomas v. Tyrell Group", "date": "2026-04-01" }
   ]
 }
