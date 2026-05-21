@@ -1,5 +1,5 @@
-# Stonewall — Legal Intelligence Platform
 # [stnwl.ai](https://www.stnwl.ai/)
+# Stonewall — Legal Intelligence Platform
 
 [![Stonewall Home](https://img.shields.io/badge/Home-stonewall.esq-c96b3c?style=for-the-badge)](https://stonewall.esq/)
 [![Showcase Pages](https://img.shields.io/badge/Showcase-GitHub_Pages-111827?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
