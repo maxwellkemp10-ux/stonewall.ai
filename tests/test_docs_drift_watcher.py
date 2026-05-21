@@ -128,6 +128,25 @@ class ScanDocTest(unittest.TestCase):
         self.assertEqual(hits[0].line_number, 2)
         self.assertIn("CorpusPipeline", hits[0].excerpt)
 
+    def test_route_symbols_match_without_word_boundaries(self) -> None:
+        sym = dd.Symbol(
+            name="/v1/matters",
+            kind="route",
+            source_file="api/routes.py",
+            pr_number=9,
+            pr_title="Route change",
+            pr_url="https://example.test/9",
+        )
+        with self._tmp() as tmp:
+            doc = tmp / "routes.md"
+            doc.write_text(
+                "Call GET /v1/matters for the list.\n"
+                "See v1/matters without a leading slash here.\n",
+                encoding="utf-8",
+            )
+            hits = dd.scan_doc(doc, {"/v1/matters": sym})
+        self.assertEqual(len(hits), 1)
+        self.assertEqual(hits[0].line_number, 1)
 
     def _tmp(self):
         import tempfile, contextlib
@@ -141,6 +160,50 @@ class ScanDocTest(unittest.TestCase):
 
 
 class BannerTest(unittest.TestCase):
+    def test_banner_inserts_after_yaml_frontmatter(self) -> None:
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            doc = Path(d) / "page.md"
+            doc.write_text(
+                "---\ntitle: API\n---\n\n# Body\n",
+                encoding="utf-8",
+            )
+            sym = dd.Symbol(
+                name="ingest_corpus",
+                kind="function",
+                source_file="scripts/x.py",
+                pr_number=3,
+                pr_title="Refactor",
+                pr_url="u",
+            )
+            hits = [dd.DocHit(str(doc), sym, 3, "# Body")]
+            banner = dd.render_banner(hits, "2026-05-21T13:17:00Z")
+            dd.apply_banner(doc, banner)
+            text = doc.read_text(encoding="utf-8")
+            self.assertTrue(text.startswith("---\ntitle: API\n---\n\n"))
+            self.assertIn(dd.BANNER_BEGIN, text)
+            self.assertLess(text.index("---"), text.index(dd.BANNER_BEGIN))
+
+    def test_banner_blockquote_prefixes_continuation_lines(self) -> None:
+        sym = dd.Symbol(
+            name="ingest_corpus",
+            kind="function",
+            source_file="scripts/x.py",
+            pr_number=12,
+            pr_title="Refactor",
+            pr_url="u",
+        )
+        banner = dd.render_banner(
+            [dd.DocHit("docs/x.md", sym, 1, "line")],
+            "2026-05-21T13:17:00Z",
+        )
+        for line in banner.splitlines():
+            if line.strip().startswith("symbols:"):
+                self.assertTrue(
+                    line.startswith("> "),
+                    f"continuation line missing blockquote: {line!r}",
+                )
+
     def test_banner_round_trip_is_idempotent(self) -> None:
         import tempfile
         with tempfile.TemporaryDirectory() as d:
@@ -194,6 +257,71 @@ class ConfigTest(unittest.TestCase):
             cfg = dd.load_config(p)
             self.assertEqual(cfg["min_symbol_length"], 8)
             self.assertEqual(cfg["ignore_symbols"], {"get", "set", "foo"})
+
+
+class ParseIsoTest(unittest.TestCase):
+    def test_normalizes_z_and_offset(self) -> None:
+        self.assertEqual(
+            dd.parse_iso_timestamp("2026-05-01T00:00:00Z"),
+            "2026-05-01T00:00:00Z",
+        )
+        self.assertEqual(
+            dd.parse_iso_timestamp("2026-05-01T00:00:00+00:00"),
+            "2026-05-01T00:00:00Z",
+        )
+
+    def test_invalid_since_exits(self) -> None:
+        with self.assertRaises(SystemExit):
+            dd.parse_iso_timestamp("not-a-date")
+
+
+class ListMergedPrsTest(unittest.TestCase):
+    def test_includes_late_merge_with_low_pr_number(self) -> None:
+        class StubGitHub(dd.GitHub):
+            def _request(self, url):
+                return [
+                    {
+                        "number": 200,
+                        "merged_at": "2026-05-20T12:00:00Z",
+                        "updated_at": "2026-05-20T12:00:00Z",
+                    },
+                    {
+                        "number": 5,
+                        "merged_at": "2026-05-21T10:00:00Z",
+                        "updated_at": "2026-05-21T10:00:00Z",
+                    },
+                ]
+
+        gh = StubGitHub(None)
+        prs = gh.list_merged_prs(
+            "owner/repo",
+            "main",
+            since_iso="2026-05-19T00:00:00Z",
+            max_prs=50,
+        )
+        numbers = [p["number"] for p in prs]
+        self.assertIn(5, numbers)
+        self.assertIn(200, numbers)
+
+
+class EscapeMarkdownTest(unittest.TestCase):
+    def test_escapes_link_breaking_characters(self) -> None:
+        escaped = dd.escape_markdown_inline("Fix [broken] (title)")
+        self.assertIn(r"\[", escaped)
+        report = dd.render_report(
+            [],
+            "2026-05-21T13:17:00Z",
+            [{
+                "number": 1,
+                "title": "Fix [broken] (title)",
+                "html_url": "https://example.test/1",
+                "merged_at": "2026-05-20T00:00:00Z",
+                "user": {"login": "bot*name"},
+            }],
+            None,
+        )
+        self.assertIn(r"Fix \[broken\]", report)
+        self.assertIn(r"bot\*name", report)
 
 
 class StateTest(unittest.TestCase):

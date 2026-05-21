@@ -7,6 +7,7 @@ a drift report plus optional inline editor banners. The companion
 workflow turns that working-tree state into a review PR.
 
 Pure stdlib. No third-party packages. Safe to run anywhere Python 3.10+ runs.
+The scheduled workflow uses Python 3.12 on ubuntu-latest.
 
 Usage:
     python scripts/docs_drift_watcher.py \
@@ -52,6 +53,7 @@ DEFAULT_CONFIG: dict = {
 
 # ---------- config & state ----------
 
+
 def load_config(path: Path) -> dict:
     cfg = dict(DEFAULT_CONFIG)
     if not path.exists():
@@ -91,7 +93,29 @@ def save_state(path: Path, state: dict) -> None:
     path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
 
 
+def parse_iso_timestamp(value: str | None) -> str | None:
+    """Normalize ISO-8601 timestamps to UTC ``...Z`` for comparisons."""
+    if not value:
+        return None
+    raw = value.strip()
+    if raw.endswith("Z"):
+        raw = raw[:-1] + "+00:00"
+    try:
+        dt = datetime.fromisoformat(raw)
+    except ValueError as exc:
+        raise SystemExit(f"Invalid ISO timestamp: {value!r}") from exc
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def escape_markdown_inline(text: str) -> str:
+    """Escape characters that break Markdown inline or link text."""
+    return re.sub(r"([\\`*_{}\[\]()#+\-.!|])", r"\\\1", text)
+
+
 # ---------- GitHub client ----------
+
 
 class GitHub:
     def __init__(self, token: str | None) -> None:
@@ -122,7 +146,6 @@ class GitHub:
         repo: str,
         base_branch: str,
         since_iso: str | None,
-        since_pr: int,
         max_prs: int,
     ) -> list[dict]:
         out: list[dict] = []
@@ -137,20 +160,25 @@ class GitHub:
             batch = self._request(url)
             if not isinstance(batch, list) or not batch:
                 break
-            kept_any = False
             for pr in batch:
                 if not pr.get("merged_at"):
                     continue
-                if since_iso and pr["merged_at"] <= since_iso:
-                    continue
-                if pr["number"] <= since_pr:
+                merged_at = parse_iso_timestamp(pr["merged_at"])
+                if since_iso and merged_at and merged_at <= since_iso:
                     continue
                 out.append(pr)
-                kept_any = True
                 if len(out) >= max_prs:
                     break
-            if not kept_any or len(batch) < 100:
+            if len(out) >= max_prs:
                 break
+            if len(batch) < 100:
+                break
+            if since_iso:
+                oldest_updated = parse_iso_timestamp(
+                    batch[-1].get("updated_at")
+                )
+                if oldest_updated and oldest_updated <= since_iso:
+                    break
             page += 1
         out.sort(key=lambda p: p["merged_at"])
         return out
@@ -174,6 +202,7 @@ class GitHub:
 
 
 # ---------- symbol extraction ----------
+
 
 @dataclass
 class Symbol:
@@ -269,6 +298,7 @@ def _python_regex_fallback(code: str) -> list[tuple[str, str]]:
 
 # ---------- doc scanning ----------
 
+
 @dataclass
 class DocHit:
     doc_path: str
@@ -292,6 +322,24 @@ def iter_docs(
             yield p
 
 
+def _line_contains_symbol(line: str, name: str, kind: str) -> bool:
+    if kind == "route":
+        return name in line
+    return re.search(rf"\b{re.escape(name)}\b", line) is not None
+
+
+def _build_word_symbol_pattern(
+    symbols_by_name: dict[str, Symbol],
+) -> re.Pattern[str] | None:
+    names = [n for n, s in symbols_by_name.items() if s.kind != "route"]
+    if not names:
+        return None
+    names.sort(key=len, reverse=True)
+    return re.compile(
+        rf"\b({'|'.join(re.escape(name) for name in names)})\b"
+    )
+
+
 def scan_doc(
     doc_path: Path, symbols_by_name: dict[str, Symbol]
 ) -> list[DocHit]:
@@ -300,9 +348,21 @@ def scan_doc(
     except UnicodeDecodeError:
         return []
     hits: list[DocHit] = []
+    word_pattern = _build_word_symbol_pattern(symbols_by_name)
+    route_syms = {
+        name: sym for name, sym in symbols_by_name.items() if sym.kind == "route"
+    }
     for i, line in enumerate(text.splitlines(), start=1):
-        for name, sym in symbols_by_name.items():
-            if re.search(rf"\b{re.escape(name)}\b", line):
+        if word_pattern:
+            match = word_pattern.search(line)
+            if match:
+                name = match.group(1)
+                hits.append(DocHit(
+                    str(doc_path), symbols_by_name[name], i, line.strip()[:240]
+                ))
+                continue
+        for name, sym in route_syms.items():
+            if _line_contains_symbol(line, name, sym.kind):
                 hits.append(DocHit(
                     str(doc_path), sym, i, line.strip()[:240]
                 ))
@@ -330,10 +390,9 @@ def render_banner(hits: list[DocHit], run_iso: str) -> str:
         symbols = ", ".join(sorted({
             f"`{h.symbol.name}`" for h in by_pr[pr_number]
         }))
-        rows.append(
-            f"- **#{pr_number}** — {sample.symbol.pr_title}\n"
-            f"  symbols: {symbols}"
-        )
+        title = escape_markdown_inline(sample.symbol.pr_title)
+        rows.append(f"- **#{pr_number}** — {title}")
+        rows.append(f"  symbols: {symbols}")
     return (
         f"{BANNER_BEGIN}\n"
         f"> **Documentation drift detected** _(scanned {run_iso})_\n"
@@ -342,15 +401,27 @@ def render_banner(hits: list[DocHit], run_iso: str) -> str:
         f"PRs against this page. Confirm the page is still accurate, edit "
         f"if needed, then remove this banner.\n"
         f">\n"
-        + "\n".join(f"> {r}" for r in rows)
+        + "\n".join(f"> {line}" for line in rows)
         + f"\n{BANNER_END}\n\n"
     )
 
 
+def _insert_after_frontmatter(text: str, block: str) -> str:
+    stripped = text.lstrip("\ufeff")
+    if stripped.startswith("---"):
+        parts = stripped.split("---", 2)
+        if len(parts) >= 3:
+            return f"---{parts[1]}---\n\n{block}{parts[2].lstrip()}"
+    return block + stripped
+
+
 def apply_banner(doc_path: Path, banner: str) -> bool:
-    text = doc_path.read_text(encoding="utf-8")
+    try:
+        text = doc_path.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        return False
     stripped = _BANNER_RE.sub("", text)
-    new_text = banner + stripped
+    new_text = _insert_after_frontmatter(stripped, banner)
     if new_text == text:
         return False
     doc_path.write_text(new_text, encoding="utf-8")
@@ -393,15 +464,20 @@ def render_report(
         lines.append("")
     lines += ["## Merged PRs scanned", ""]
     for pr in prs:
+        title = escape_markdown_inline(pr["title"])
+        login = escape_markdown_inline(
+            (pr.get("user") or {}).get("login") or "unknown"
+        )
         lines.append(
-            f"- #{pr['number']} — [{pr['title']}]({pr['html_url']}) "
-            f"by @{pr['user']['login']}, merged {pr['merged_at']}"
+            f"- #{pr['number']} — [{title}]({pr['html_url']}) "
+            f"by @{login}, merged {pr['merged_at']}"
         )
     lines.append("")
     return "\n".join(lines)
 
 
 # ---------- orchestration ----------
+
 
 def collect_symbols(
     gh: GitHub,
@@ -449,7 +525,8 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--repo", required=True, help="owner/name of source repo")
     ap.add_argument("--docs-repo", default=None,
-                    help="owner/name of docs repo (defaults to --repo)")
+                    help="owner/name of docs repo (recorded in summary JSON; "
+                         "same-repo checkout is assumed today)")
     ap.add_argument("--docs-root", default="docs")
     ap.add_argument("--state", default=".docs-drift/state.json")
     ap.add_argument("--config", default=".docs-drift/config.yml")
@@ -467,7 +544,8 @@ def main(argv: list[str] | None = None) -> int:
 
     config = load_config(config_path)
     state = load_state(state_path)
-    since_iso = args.since or state.get("last_run_utc")
+    since_raw = args.since or state.get("last_run_utc")
+    since_iso = parse_iso_timestamp(since_raw) if since_raw else None
     since_pr = int(state.get("last_pr_number") or 0)
 
     token = os.environ.get("GITHUB_TOKEN")
@@ -484,7 +562,6 @@ def main(argv: list[str] | None = None) -> int:
         args.repo,
         base_branch=str(config.get("base_branch") or "main"),
         since_iso=since_iso,
-        since_pr=since_pr,
         max_prs=int(config.get("max_prs_per_run") or 50),
     )
     print(f"[drift] merged PRs in window: {len(prs)}", file=sys.stderr)

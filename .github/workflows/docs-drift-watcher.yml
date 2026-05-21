@@ -48,19 +48,19 @@ jobs:
           SINCE: ${{ inputs.since }}
         run: |
           set -euo pipefail
-          SINCE_ARG=""
+          ARGS=(
+            --repo "${{ github.repository }}"
+            --docs-root docs
+            --state .docs-drift/state.json
+            --config .docs-drift/config.yml
+            --report-dir docs/_drift
+            --output .docs-drift/last-run.json
+            --apply-banners
+          )
           if [ -n "${SINCE:-}" ]; then
-            SINCE_ARG="--since ${SINCE}"
+            ARGS+=(--since "${SINCE}")
           fi
-          python scripts/docs_drift_watcher.py \
-            --repo "${{ github.repository }}" \
-            --docs-root docs \
-            --state .docs-drift/state.json \
-            --config .docs-drift/config.yml \
-            --report-dir docs/_drift \
-            --output .docs-drift/last-run.json \
-            --apply-banners \
-            ${SINCE_ARG}
+          python scripts/docs_drift_watcher.py "${ARGS[@]}"
 
       - name: Read run summary
         id: summary
@@ -84,6 +84,8 @@ jobs:
           path: .docs-drift/last-run.json
           retention-days: 30
 
+      # Checkpoint in .docs-drift/state.json advances when this drift PR
+      # merges to main — not on clean runs (intentional; see design doc).
       - name: Open or refresh review PR
         if: steps.summary.outputs.detected == 'true'
         env:

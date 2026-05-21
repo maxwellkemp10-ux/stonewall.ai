@@ -100,8 +100,9 @@ gaps, no exponential backoff games.
 
 ## What the editor sees
 
-Every flagged page gets a banner injected at the very top, between
-sentinel comments. It looks like this:
+Every flagged page gets a banner injected immediately after any YAML
+frontmatter (or at the top when there is none), between sentinel comments.
+It looks like this:
 
 ```markdown
 <!-- DOCS-DRIFT:BEGIN -->
@@ -206,12 +207,14 @@ same repo it runs in and opens the review PR there. No extra secrets.
 
 ### Cross-repo docs
 
-When documentation lives in a separate repository, pass the docs repo
-through `--docs-repo` and run the workflow from the docs repo with a
-GitHub App token (or fine-grained PAT) that has `contents:read` on the
-source repo and `contents:write` + `pull-requests:write` on the docs
-repo. The scanner still does the matching — the workflow just commits
-to a different remote.
+When documentation lives in a separate repository, run the workflow from
+the docs repo with a GitHub App token (or fine-grained PAT) that has
+`contents:read` on the source repo and `contents:write` +
+`pull-requests:write` on the docs repo. Pass `--docs-repo` so the run
+summary records which remote owns the pages; today the scanner still
+reads `docs/` from the checked-out workspace (same-repo layout). A
+future workflow variant can check out two remotes — the flag is reserved
+for that path.
 
 ---
 
@@ -252,8 +255,9 @@ to a different remote.
 ## Status
 
 - Schedule: daily at **13:17 UTC** plus manual dispatch.
-- Dependencies: Python 3.12, GitHub Actions runner, `GITHUB_TOKEN`.
-  No third-party Python packages.
+- Dependencies: Python **3.12** on the GitHub Actions runner (the script
+  itself is stdlib-only and runs on **3.10+** locally), plus
+  `GITHUB_TOKEN`. No third-party Python packages.
 - Footprint: one workflow, one script, one config file, one state
   file. Deletable in a single commit if it ever stops earning its
   keep.
