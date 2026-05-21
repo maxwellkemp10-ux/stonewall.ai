@@ -30,7 +30,7 @@ jobs:
         run: node --test tests/qb1_tracker_helpers.test.mjs tests/email_consolidator.test.mjs
 
       - name: Run Python tests
-        run: python -m unittest tests.test_ingest_onedrive tests.test_verify_repo_consistency tests.test_sample_corpus
+        run: python -m unittest tests.test_ingest_onedrive tests.test_verify_repo_consistency tests.test_sample_corpus tests.test_docs_drift_watcher
 
       - name: Showcase voice guard
         run: python scripts/check_showcase_voice.py
