@@ -1,4 +1,5 @@
-# Stonewall — Legal Document Intelligence Platform
+# Stonewall — Legal Intelligence Platform
+# [stnwl.ai](https://www.stnwl.ai/)
 
 [![Stonewall Home](https://img.shields.io/badge/Home-stonewall.esq-c96b3c?style=for-the-badge)](https://stonewall.esq/)
 [![Showcase Pages](https://img.shields.io/badge/Showcase-GitHub_Pages-111827?style=for-the-badge)](https://maxwellkemp10-ux.github.io/stonewall-showcase/)
@@ -106,3 +107,8 @@ python scripts/verify_repo_consistency.py
 | Delivery surfaces | GitHub Pages, static portal |
 
 The public repository is the proof surface. The implementation work is the product.
+
+
+inquiries@stnwl.ai
+
+2026 — Stonewall Legal Enterprises
