@@ -11,11 +11,18 @@ Long-form product and engineering documentation lives in [`overview/`](overview/
 | [`overview/official-brief.md`](overview/official-brief.md) | Canonical product thesis. |
 | [`overview/product-architecture.md`](overview/product-architecture.md) | How the corpus, indexes, CLI, AI, workflow, and publication layers fit together. |
 | [`overview/workflow-surfaces.md`](overview/workflow-surfaces.md) | Where the archive becomes operator leverage. |
-| [`overview/docs-drift-sentinel.md`](overview/docs-drift-sentinel.md) | The scheduled watcher that keeps these docs honest about the code they describe. |
+| [`overview/docs-drift-watcher.md`](overview/docs-drift-watcher.md) | Technical reference for the scheduled drift watcher (workflow, scanner, banners, config). |
+| [`overview/docs-drift-sentinel.md`](overview/docs-drift-sentinel.md) | Design rationale and operating model for the drift-reconciliation routine. |
 
 ## Showcase narratives
 
 Engineering-exhibit narratives live in [`showcase/`](showcase/).
+
+| Document | Reads as |
+| --- | --- |
+| [`showcase/docs-drift-watcher.md`](showcase/docs-drift-watcher.md) | Flagship narrative — the daily routine that keeps docs honest about the code, with day-in-the-life, editor surface, and proof points. |
+| [`showcase/stonewall-showcase.md`](showcase/stonewall-showcase.md) | Showcase entrypoint and companion-surface map. |
+| [`showcase/synergy-v13.md`](showcase/synergy-v13.md) | Cross-layer synergy narrative. |
 
 ## Operator portal
 
