@@ -89,7 +89,7 @@ jobs:
       - name: Open or refresh review PR
         if: steps.summary.outputs.detected == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DOCS_DRIFT_TOKEN || secrets.GITHUB_TOKEN }}
           DRIFT_HITS: ${{ steps.summary.outputs.hits }}
           DRIFT_PRS: ${{ steps.summary.outputs.prs }}
           DRIFT_PAGES: ${{ steps.summary.outputs.flagged_pages }}
@@ -137,17 +137,42 @@ jobs:
           } > "$BODY_FILE"
 
           TITLE="docs: drift watcher review ($(date -u +%Y-%m-%d))"
+          fallback_summary() {
+            local action="$1"
+            local details="$2"
+            local single_line
+            single_line="$(printf '%s' "$details" | tr '\n' ' ' | cut -c1-900)"
+            echo "::warning title=Docs drift review PR not ${action}::${single_line}"
+            {
+              echo "### Docs drift review PR"
+              echo
+              echo "The workflow pushed \`${BRANCH}\`, but GitHub did not allow the runner to ${action} the review PR."
+              echo
+              echo '```text'
+              printf '%s\n' "$details"
+              echo '```'
+              echo
+              echo "Open or refresh the review PR from \`${BRANCH}\` manually, or configure \`DOCS_DRIFT_TOKEN\` with contents write and pull requests write access so this workflow can do it automatically."
+            } >> "$GITHUB_STEP_SUMMARY"
+          }
+
           EXISTING="$(gh pr list --head "$BRANCH" --state open \
                         --json number --jq '.[0].number' || true)"
           if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" \
+            if ! OUTPUT="$(gh pr edit "$EXISTING" \
               --title "$TITLE" \
-              --body-file "$BODY_FILE"
+              --body-file "$BODY_FILE" 2>&1)"; then
+              fallback_summary "refresh" "$OUTPUT"
+              exit 0
+            fi
             echo "Refreshed PR #${EXISTING}."
           else
-            gh pr create \
+            if ! OUTPUT="$(gh pr create \
               --base main \
               --head "$BRANCH" \
               --title "$TITLE" \
-              --body-file "$BODY_FILE"
+              --body-file "$BODY_FILE" 2>&1)"; then
+              fallback_summary "create" "$OUTPUT"
+              exit 0
+            fi
           fi

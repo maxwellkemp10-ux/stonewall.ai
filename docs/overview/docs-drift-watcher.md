@@ -203,7 +203,15 @@ for tuning `ignore_symbols` against a real backlog.
 ### Same-repo docs (default)
 
 Documentation lives at `docs/` next to the code. The workflow scans the
-same repo it runs in and opens the review PR there. No extra secrets.
+same repo it runs in and opens the review PR there with the built-in
+`GITHUB_TOKEN` when repository policy allows Actions to create PRs.
+
+If that policy blocks PR creation, the watcher still pushes the
+`docs-drift/auto` branch, exits successfully, and writes a warning plus
+manual next steps to the job summary. To keep the entire loop automatic
+under stricter policy, add a `DOCS_DRIFT_TOKEN` secret with contents write
+and pull requests write access; the workflow prefers it over
+`GITHUB_TOKEN` when present.
 
 ### Cross-repo docs
 
@@ -227,6 +235,7 @@ for that path.
 | Stacked banners on repeated runs | Sentinel comments scope the banner block; each rerun strips the prior one before writing a new one. |
 | Concurrent runs racing | `concurrency: docs-drift-watcher` group prevents two scans pushing to the same branch. |
 | Drift PR sitting unmerged | Workflow refreshes the same `docs-drift/auto` branch each day — the open PR keeps accumulating new symbols until it is merged. |
+| Actions token blocked from opening PRs | The branch push remains the source of truth, the job summary explains the manual PR step, and `DOCS_DRIFT_TOKEN` restores automatic open/refresh behavior. |
 
 ---
 
@@ -257,7 +266,7 @@ for that path.
 - Schedule: daily at **13:17 UTC** plus manual dispatch.
 - Dependencies: Python **3.12** on the GitHub Actions runner (the script
   itself is stdlib-only and runs on **3.10+** locally), plus
-  `GITHUB_TOKEN`. No third-party Python packages.
+  `GITHUB_TOKEN` or `DOCS_DRIFT_TOKEN`. No third-party Python packages.
 - Footprint: one workflow, one script, one config file, one state
   file. Deletable in a single commit if it ever stops earning its
   keep.
