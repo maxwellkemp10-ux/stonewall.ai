@@ -203,7 +203,10 @@ for tuning `ignore_symbols` against a real backlog.
 ### Same-repo docs (default)
 
 Documentation lives at `docs/` next to the code. The workflow scans the
-same repo it runs in and opens the review PR there. No extra secrets.
+same repo it runs in and opens the review PR there. Configure
+`DOCS_DRIFT_TOKEN` when repository policy blocks the default Actions token
+from opening PRs; otherwise the watcher pushes `docs-drift/auto` and leaves
+manual follow-up instructions in the run summary.
 
 ### Cross-repo docs
 
@@ -227,6 +230,7 @@ for that path.
 | Stacked banners on repeated runs | Sentinel comments scope the banner block; each rerun strips the prior one before writing a new one. |
 | Concurrent runs racing | `concurrency: docs-drift-watcher` group prevents two scans pushing to the same branch. |
 | Drift PR sitting unmerged | Workflow refreshes the same `docs-drift/auto` branch each day — the open PR keeps accumulating new symbols until it is merged. |
+| Default Actions token cannot open PRs | Workflow prefers `DOCS_DRIFT_TOKEN`; without it, the branch still pushes and the job exits green with manual PR instructions. |
 
 ---
 

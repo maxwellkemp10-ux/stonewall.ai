@@ -89,7 +89,11 @@ jobs:
       - name: Open or refresh review PR
         if: steps.summary.outputs.detected == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Prefer a dedicated token when present. Some repository policies
+          # block the default Actions token from opening PRs; in that case the
+          # workflow still leaves docs-drift/auto pushed and exits green with
+          # manual follow-up instructions.
+          GH_TOKEN: ${{ secrets.DOCS_DRIFT_TOKEN || secrets.GITHUB_TOKEN }}
           DRIFT_HITS: ${{ steps.summary.outputs.hits }}
           DRIFT_PRS: ${{ steps.summary.outputs.prs }}
           DRIFT_PAGES: ${{ steps.summary.outputs.flagged_pages }}
@@ -111,6 +115,20 @@ jobs:
           fi
           git commit -m "docs: drift watcher flagged ${DRIFT_HITS} reference(s) from ${DRIFT_PRS} PR(s)"
           git push --force-with-lease origin "$BRANCH"
+
+          summarize_pr_followup() {
+            local mode="$1"
+            {
+              echo "## Docs drift review PR needs manual follow-up"
+              echo
+              echo "The watcher pushed \`${BRANCH}\` with **${DRIFT_HITS}**"
+              echo "matched reference(s) across **${DRIFT_PAGES}** page(s), but"
+              echo "GitHub rejected the automatic PR ${mode}."
+              echo
+              echo "Open or refresh a PR from \`${BRANCH}\` into \`main\`, then"
+              echo "review the \`DOCS-DRIFT\` banners and merge when cleared."
+            } >> "$GITHUB_STEP_SUMMARY"
+          }
 
           BODY_FILE="$(mktemp)"
           {
@@ -140,14 +158,25 @@ jobs:
           EXISTING="$(gh pr list --head "$BRANCH" --state open \
                         --json number --jq '.[0].number' || true)"
           if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" \
+            if gh pr edit "$EXISTING" \
               --title "$TITLE" \
-              --body-file "$BODY_FILE"
-            echo "Refreshed PR #${EXISTING}."
+              --body-file "$BODY_FILE"; then
+              echo "Refreshed PR #${EXISTING}."
+            else
+              echo "::warning::Unable to refresh PR #${EXISTING}; ${BRANCH} was pushed for manual follow-up."
+              summarize_pr_followup "refresh"
+              exit 0
+            fi
           else
-            gh pr create \
+            if gh pr create \
               --base main \
               --head "$BRANCH" \
               --title "$TITLE" \
-              --body-file "$BODY_FILE"
+              --body-file "$BODY_FILE"; then
+              echo "Opened docs drift review PR."
+            else
+              echo "::warning::Unable to create docs drift review PR; ${BRANCH} was pushed for manual follow-up."
+              summarize_pr_followup "creation"
+              exit 0
+            fi
           fi
