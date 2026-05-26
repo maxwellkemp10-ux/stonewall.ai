@@ -217,6 +217,7 @@ Private symbols (leading underscore in Python, lowercase JS class names) are ski
 | Source repo unreachable | Run aborts; watermark does **not** advance. Next scheduled run resumes from the same point. |
 | API rate limit on a big backlog | `max_prs_per_run` caps the scan window. The next day picks up where this one stopped, because state only advances on merge. |
 | Drift PR left unmerged for a week | Each run refreshes the same `docs-drift/auto` branch. New symbols pile into the same open PR until the editor clears it. |
+| Default Actions token cannot open PRs | The workflow uses `DOCS_DRIFT_TOKEN` when configured; otherwise it keeps the run green after pushing `docs-drift/auto` and writes manual PR instructions to the run summary. |
 | False positive on a common word | Tune `ignore_symbols` in the config; the change rides through normal review. |
 | Concurrent runs racing | `concurrency: docs-drift-watcher` prevents two scans pushing to the same branch. |
 | Editor closes the PR without merging | Watermark does **not** advance. The next run re-flags the same drift. Move it by hand only if you mean it. |
