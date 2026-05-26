@@ -130,6 +130,24 @@ jobs:
             } >> "$GITHUB_STEP_SUMMARY"
           }
 
+          is_pr_permission_block() {
+            local log_file="$1"
+            grep -Fq "GitHub Actions is not permitted to create or approve pull requests (createPullRequest)" "$log_file" ||
+              grep -Fq "Resource not accessible by integration" "$log_file"
+          }
+
+          handle_pr_failure() {
+            local mode="$1"
+            local log_file="$2"
+            if is_pr_permission_block "$log_file"; then
+              echo "::warning::Unable to ${mode} docs drift review PR because the token lacks PR permissions; ${BRANCH} was pushed for manual follow-up."
+              summarize_pr_followup "$mode"
+              exit 0
+            fi
+            cat "$log_file" >&2
+            exit 1
+          }
+
           BODY_FILE="$(mktemp)"
           {
             echo "## Docs drift review"
@@ -157,26 +175,23 @@ jobs:
           TITLE="docs: drift watcher review ($(date -u +%Y-%m-%d))"
           EXISTING="$(gh pr list --head "$BRANCH" --state open \
                         --json number --jq '.[0].number' || true)"
+          PR_ERROR_FILE="$(mktemp)"
           if [ -n "$EXISTING" ]; then
             if gh pr edit "$EXISTING" \
               --title "$TITLE" \
-              --body-file "$BODY_FILE"; then
+              --body-file "$BODY_FILE" 2>"$PR_ERROR_FILE"; then
               echo "Refreshed PR #${EXISTING}."
             else
-              echo "::warning::Unable to refresh PR #${EXISTING}; ${BRANCH} was pushed for manual follow-up."
-              summarize_pr_followup "refresh"
-              exit 0
+              handle_pr_failure "refresh" "$PR_ERROR_FILE"
             fi
           else
             if gh pr create \
               --base main \
               --head "$BRANCH" \
               --title "$TITLE" \
-              --body-file "$BODY_FILE"; then
+              --body-file "$BODY_FILE" 2>"$PR_ERROR_FILE"; then
               echo "Opened docs drift review PR."
             else
-              echo "::warning::Unable to create docs drift review PR; ${BRANCH} was pushed for manual follow-up."
-              summarize_pr_followup "creation"
-              exit 0
+              handle_pr_failure "creation" "$PR_ERROR_FILE"
             fi
           fi
