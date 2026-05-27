@@ -1,0 +1,1370 @@
+{
+  "run_utc": "2026-05-27T14:29:16Z",
+  "repo": "maxwellkemp10-ux/stonewall.ai",
+  "docs_repo": "maxwellkemp10-ux/stonewall.ai",
+  "since_utc": null,
+  "since_pr": 0,
+  "merged_prs": [
+    {
+      "number": 2,
+      "title": "feat: port showcase-relevant changes from Stonewall PRs #101-107",
+      "merged_at": "2026-04-03T00:03:54Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/2",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 4,
+      "title": "feat(docs): dual frontend interfaces \u2014 public showcase and private prototype",
+      "merged_at": "2026-04-03T15:29:32Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/4",
+      "author": "Copilot"
+    },
+    {
+      "number": 5,
+      "title": "Enhance Stonewall showcase with interactive animations and visual polish",
+      "merged_at": "2026-04-04T03:21:35Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/5",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 10,
+      "title": "Portal: QB1 multi-page app, JSON data, and local settings",
+      "merged_at": "2026-04-16T09:58:44Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/10",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 9,
+      "title": "feat(portal): add user settings page",
+      "merged_at": "2026-04-23T10:45:32Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/9",
+      "author": "Copilot"
+    },
+    {
+      "number": 11,
+      "title": "Expand showcase with sanitized innovation playbooks",
+      "merged_at": "2026-04-25T07:56:35Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/11",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 15,
+      "title": "Cursor/sanitized innovations showcase d236",
+      "merged_at": "2026-04-27T03:27:51Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/15",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 16,
+      "title": "Fix Cloudflare Pages build by declaring docs/ as the output directory",
+      "merged_at": "2026-04-27T03:31:51Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/16",
+      "author": "Copilot"
+    },
+    {
+      "number": 17,
+      "title": "chore: remove GitBook entirely and rationalize repo structure",
+      "merged_at": "2026-04-29T06:38:18Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/17",
+      "author": "Copilot"
+    },
+    {
+      "number": 21,
+      "title": "Resolve open PR conflicts: merge PR #18 + PR #20, fix all review comments",
+      "merged_at": "2026-04-30T03:37:15Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/21",
+      "author": "Copilot"
+    },
+    {
+      "number": 22,
+      "title": "Align showcase Pages domain ownership",
+      "merged_at": "2026-05-02T03:26:03Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/22",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 23,
+      "title": "Add Cursor Cloud specific instructions to AGENTS.md",
+      "merged_at": "2026-05-02T18:43:37Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/23",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 24,
+      "title": "Potential fix for code scanning alert no. 3: Workflow does not contain permissions",
+      "merged_at": "2026-05-12T22:21:14Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/24",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 25,
+      "title": "Potential fix for code scanning alert no. 2: Replacement of a substring with itself",
+      "merged_at": "2026-05-12T22:21:31Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/25",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 26,
+      "title": "feat(portal): align portal data with 12-case corpus (PR-777 stonewall anonymized)",
+      "merged_at": "2026-05-15T09:11:25Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/26",
+      "author": "Copilot"
+    },
+    {
+      "number": 27,
+      "title": "docs(overview): add Docs Drift Sentinel reference",
+      "merged_at": "2026-05-20T16:40:34Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/27",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 28,
+      "title": "feat(docs-drift): daily watcher that flags stale docs against merged PRs",
+      "merged_at": "2026-05-21T23:31:56Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/28",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 29,
+      "title": "docs(showcase): flagship narrative for the daily drift watcher",
+      "merged_at": "2026-05-23T02:13:24Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/29",
+      "author": "maxwellkemp10-ux"
+    },
+    {
+      "number": 30,
+      "title": "Fix Docs Drift Watcher: graceful fallback when PR creation is blocked",
+      "merged_at": "2026-05-26T18:19:49Z",
+      "html_url": "https://github.com/maxwellkemp10-ux/stonewall.ai/pull/30",
+      "author": "Copilot"
+    }
+  ],
+  "symbols": [
+    {
+      "name": "parse_manual_overrides_file",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/ingest_onedrive.py"
+    },
+    {
+      "name": "load_manual_overrides",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/ingest_onedrive.py"
+    },
+    {
+      "name": "normalize_date",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "choose_email_date",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "extract_email_candidates",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "scan_markdown_candidates",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "merge_candidate_sources",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "load_cases",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "load_case_dates",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "build_rows",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "write_outputs",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "scripts/legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_load_manual_overrides_falls_back_to_legacy_path",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_ingest_onedrive.py"
+    },
+    {
+      "name": "test_load_manual_overrides_explicit_path_skips_legacy",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_ingest_onedrive.py"
+    },
+    {
+      "name": "test_load_manual_overrides_merges_legacy_without_overwriting_local",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_ingest_onedrive.py"
+    },
+    {
+      "name": "LoadManualOverridesTests",
+      "kind": "class",
+      "pr_number": 2,
+      "source_file": "tests/test_ingest_onedrive.py"
+    },
+    {
+      "name": "NormalizeDateTests",
+      "kind": "class",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "ChooseEmailDateTests",
+      "kind": "class",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "SanitizeFieldTests",
+      "kind": "class",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "MergeCandidateSourcesTests",
+      "kind": "class",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_mm_dd_yyyy",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_iso",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_two_digit_year_low",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_two_digit_year_high",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_iso_with_time",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_invalid_date",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_empty_string",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_garbage",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_embedded_whitespace",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_invalid_month",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_empty",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_frequency_wins",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_tie_breaks_earliest",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_single",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_newlines_collapsed",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_extra_spaces_collapsed",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_truncation",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_short_unchanged",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_carriage_return",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_merges_email_and_markdown",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_no_args_returns_empty",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_single_map_preserved",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "test_duplicate_dates_across_sources_preserved",
+      "kind": "function",
+      "pr_number": 2,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "resize",
+      "kind": "function",
+      "pr_number": 5,
+      "source_file": "docs/app.js"
+    },
+    {
+      "name": "createParticle",
+      "kind": "function",
+      "pr_number": 5,
+      "source_file": "docs/app.js"
+    },
+    {
+      "name": "initParticles",
+      "kind": "function",
+      "pr_number": 5,
+      "source_file": "docs/app.js"
+    },
+    {
+      "name": "drawParticles",
+      "kind": "function",
+      "pr_number": 5,
+      "source_file": "docs/app.js"
+    },
+    {
+      "name": "startCounter",
+      "kind": "function",
+      "pr_number": 5,
+      "source_file": "docs/app.js"
+    },
+    {
+      "name": "updateActiveNav",
+      "kind": "function",
+      "pr_number": 5,
+      "source_file": "docs/app.js"
+    },
+    {
+      "name": "loadSettings",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "saveSettings",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "formatMoney",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "formatNumber",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "applyGlobalSettings",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "showToast",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "loadData",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderDashboard",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderCases",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderDeadlines",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderArtifacts",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderPatterns",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderCast",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderBilling",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "populateSettingsForm",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "bindSettingsForm",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "switchPage",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "bindNav",
+      "kind": "function",
+      "pr_number": 10,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "renderPlaybooks",
+      "kind": "function",
+      "pr_number": 11,
+      "source_file": "docs/portal/app.js"
+    },
+    {
+      "name": "collect_files",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/check_showcase_voice.py"
+    },
+    {
+      "name": "clean_cell",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/email_to_md.py"
+    },
+    {
+      "name": "sanitize",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/email_to_md.py"
+    },
+    {
+      "name": "matter_id",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "write",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_case",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_deposition",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_transcript",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_email",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_motion",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_character",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_pattern",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "make_billing",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/generate_sample_corpus.py"
+    },
+    {
+      "name": "wire_events",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/notion_wire_cases.py"
+    },
+    {
+      "name": "wire_incidents",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "scripts/notion_wire_cases.py"
+    },
+    {
+      "name": "CleanFieldTests",
+      "kind": "class",
+      "pr_number": 21,
+      "source_file": "tests/test_legal_matters_offline_backfill.py"
+    },
+    {
+      "name": "CorpusArtifactTests",
+      "kind": "class",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "CorpusStructureTests",
+      "kind": "class",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "test_corpus_root_exists",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "test_each_expected_category_present",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "test_each_category_non_empty",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "test_no_duplicate_artifact_ids",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "test_total_artifact_floor",
+      "kind": "function",
+      "pr_number": 21,
+      "source_file": "tests/test_sample_corpus.py"
+    },
+    {
+      "name": "load_config",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "load_state",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "save_state",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "parse_iso_timestamp",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "escape_markdown_inline",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "GitHub",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "Symbol",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "extract_python_symbols",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "extract_js_symbols",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "extract_routes",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "extract_from_patch",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "DocHit",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "iter_docs",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "scan_doc",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "apply_banner",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "collect_symbols",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "list_merged_prs",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "list_pr_files",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "scripts/docs_drift_watcher.py"
+    },
+    {
+      "name": "ExtractPythonSymbolsTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ExtractJsSymbolsTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ExtractRoutesTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ExtractFromPatchTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ScanDocTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "BannerTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ConfigTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ParseIsoTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "ListMergedPrsTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "EscapeMarkdownTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "StateTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "CollectSymbolsTest",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_picks_up_public_functions_and_classes",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_unparseable_diff_falls_back_to_regex",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_export_forms",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_route_patterns",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_rename_appears_on_both_sides",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_empty_patch_returns_nothing",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_word_boundary_match_and_excerpt",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_route_symbols_match_without_word_boundaries",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_banner_inserts_after_yaml_frontmatter",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_banner_blockquote_prefixes_continuation_lines",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_banner_round_trip_is_idempotent",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_missing_config_uses_defaults",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_overrides_apply",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_normalizes_z_and_offset",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_invalid_since_exits",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_includes_late_merge_with_low_pr_number",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_escapes_link_breaking_characters",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_round_trip",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "test_collect_dedupes_and_attaches_pr_metadata",
+      "kind": "function",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "StubGitHub",
+      "kind": "class",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "/internal/sync",
+      "kind": "route",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "/v1/matters",
+      "kind": "route",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    },
+    {
+      "name": "/v2/cases/:id",
+      "kind": "route",
+      "pr_number": 28,
+      "source_file": "tests/test_docs_drift_watcher.py"
+    }
+  ],
+  "hits": [
+    {
+      "doc": "docs/ARCHITECTURE.md",
+      "line": 214,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "### GitHub Actions CI/CD"
+    },
+    {
+      "doc": "docs/ARCHITECTURE.md",
+      "line": 217,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "- **Secrets:** API keys stored as GitHub Actions secrets"
+    },
+    {
+      "doc": "docs/showcase-repo-handoff.md",
+      "line": 3,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "This runbook describes how to keep the Stonewall showcase surfaces aligned across GitHub Pages, the official brief, and the portal demo."
+    },
+    {
+      "doc": "docs/overview/product-architecture.md",
+      "line": 31,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "GitHub Pages, the portal, and the official brief all express the same system through different presentation surfaces."
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 34,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "2. **Lists merged PRs.** Asks GitHub for everything merged into the base"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 59,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "GitHub Actions runner \u2500\u2500\u2500\u2500 reads .docs-drift/state.json"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 62,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "|                    GitHub API: merged PRs"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 97,
+      "symbol": "Symbol",
+      "pr": 28,
+      "excerpt": "| `tests/test_docs_drift_watcher.py` | Symbol extraction + doc matching coverage. |"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 117,
+      "symbol": "/v1/matters",
+      "pr": 28,
+      "excerpt": "> - **#487** \u2014 Drop legacy `/v1/matters` route"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 118,
+      "symbol": "/v1/matters",
+      "pr": 28,
+      "excerpt": ">   symbols: `/v1/matters`"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 129,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "audit the watcher's reasoning without leaving GitHub."
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 214,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "the docs repo with a GitHub App token (or fine-grained PAT) that has"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 215,
+      "symbol": "write",
+      "pr": 21,
+      "excerpt": "`contents:read` on the source repo and `contents:write` +"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 216,
+      "symbol": "write",
+      "pr": 21,
+      "excerpt": "`pull-requests:write` on the docs repo. Pass `--docs-repo` so the run"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 241,
+      "symbol": "write",
+      "pr": 21,
+      "excerpt": "change, and blocking PRs trains everyone to write tiny throwaway doc"
+    },
+    {
+      "doc": "docs/overview/docs-drift-watcher.md",
+      "line": 262,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "- Dependencies: Python **3.12** on the GitHub Actions runner (the script"
+    },
+    {
+      "doc": "docs/overview/official-brief.md",
+      "line": 79,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "- GitHub Pages is the immediate reveal layer designed to create instant product clarity"
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 13,
+      "symbol": "write",
+      "pr": 21,
+      "excerpt": "There is no manual workflow that fixes this. Asking authors to \"remember the docs\" does not scale. Gating every code PR on a doc edit trains reviewers to write throwaway one-liners to get past the bot. The only durable answer is a surveilla"
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 25,
+      "symbol": "Symbol",
+      "pr": 28,
+      "excerpt": "| **No false-positive noise.** | Symbol extraction is diff-aware and word-boundary matched, with an in-repo ignore list. |"
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 74,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "\u2502  GitHub API \u2192 merged PRs since watermark                \u2502"
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 179,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "The watermark living in the repository \u2014 not in a hosted database \u2014 is a deliberate choice. A reviewer auditing a drift PR can read this file and reconstruct what the bot saw without leaving GitHub."
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 231,
+      "symbol": "write",
+      "pr": 21,
+      "excerpt": "**Why not block every code PR on doc edits?** Wrong loop. The engineer writing the code is rarely the right author for the doc change, and gating PRs on doc review trains everyone to write tiny throwaway edits. The watcher moves the work to"
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 281,
+      "symbol": "Symbol",
+      "pr": 28,
+      "excerpt": "| `tests/test_docs_drift_watcher.py` | Symbol extraction + doc matching coverage. |"
+    },
+    {
+      "doc": "docs/showcase/docs-drift-watcher.md",
+      "line": 290,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "| Runtime | Python 3.12 on the GitHub Actions runner; **stdlib only**, no third-party packages |"
+    },
+    {
+      "doc": "docs/showcase/stonewall-showcase.md",
+      "line": 12,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "- ingestion and synchronization workflows across OneDrive, Notion, and GitHub"
+    },
+    {
+      "doc": "docs/showcase/stonewall-showcase.md",
+      "line": 17,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "- GitHub Pages exhibit: https://maxwellkemp10-ux.github.io/stonewall-showcase/"
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 540,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<a href=\"https://github.com/maxwellkemp10-ux/stonewall-showcase\">GitHub</a>"
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 554,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<a class=\"btn-secondary\" href=\"https://github.com/maxwellkemp10-ux/stonewall-showcase\">View Source on GitHub</a>"
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 561,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<span class=\"badge\">GitHub Actions</span>"
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 573,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<p style=\"margin:18px 0 0;color:var(--muted);font-size:14px;\">Publication stack: GitHub Pages for immediate impact, the official brief for print and PDF circulation, and the public source repo for collaborators who want to read the implemen"
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 614,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<h3>GitHub Repo</h3>"
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 697,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<article class=\"innovation\"><div class=\"icon\">\ud83d\udd04</div><h3>Multi-Platform Sync</h3><p>GitHub stores the durable corpus, OneDrive remains the source reservoir, and Notion becomes the operator layer for live matter management, task runway, and "
+    },
+    {
+      "doc": "docs/index.html",
+      "line": 881,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<a href=\"https://github.com/maxwellkemp10-ux/stonewall-showcase\">GitHub Repo</a>"
+    },
+    {
+      "doc": "docs/insights.html",
+      "line": 115,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<a href=\"https://github.com/maxwellkemp10-ux/stonewall-showcase\">GitHub</a>"
+    },
+    {
+      "doc": "docs/official-brief.html",
+      "line": 135,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<a href=\"https://github.com/maxwellkemp10-ux/stonewall-showcase\">GitHub</a>"
+    },
+    {
+      "doc": "docs/official-brief.html",
+      "line": 141,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<p class=\"meta\">Print edition \u00b7 GitHub Pages</p>"
+    },
+    {
+      "doc": "docs/official-brief.html",
+      "line": 182,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "Stonewall publishes through coordinated surfaces. The canonical publishing stack owns stonewall.esq, while this repository\u2019s GitHub Pages exhibit provides an immediate engineering showcase. The official brief is the print and PDF edition of"
+    },
+    {
+      "doc": "docs/prototype/index.html",
+      "line": 75,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<p>GitHub Actions workflows for CI, deployment, and code review.</p>"
+    },
+    {
+      "doc": "docs/prototype/index.html",
+      "line": 132,
+      "symbol": "write",
+      "pr": 21,
+      "excerpt": "<p><code>ingest_onedrive.py</code> and <code>parse_emails.ps1</code> walk folders, match matters, and write usable derivatives.</p>"
+    },
+    {
+      "doc": "docs/prototype/index.html",
+      "line": 372,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "Four GitHub Actions workflows govern verification, deployment, and code review automation."
+    },
+    {
+      "doc": "docs/prototype/index.html",
+      "line": 383,
+      "symbol": "GitHub",
+      "pr": 28,
+      "excerpt": "<span>Deploys the <code>docs/</code> folder to GitHub Pages on push to main branch.</span>"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 215,
+      "symbol": "resize",
+      "pr": 5,
+      "excerpt": ".field textarea { resize: vertical; min-height: 80px; }"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 674,
+      "symbol": "showToast",
+      "pr": 10,
+      "excerpt": "<button type=\"button\" class=\"btn-primary\" onclick=\"showToast()\">Save profile</button>"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 784,
+      "symbol": "showToast",
+      "pr": 10,
+      "excerpt": "<button type=\"button\" class=\"btn-primary\" onclick=\"showToast()\">Save preferences</button>"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 870,
+      "symbol": "showToast",
+      "pr": 10,
+      "excerpt": "<button type=\"button\" class=\"btn-primary\" onclick=\"showToast()\">Save notifications</button>"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 921,
+      "symbol": "showToast",
+      "pr": 10,
+      "excerpt": "<button type=\"button\" class=\"btn-primary\" onclick=\"showToast()\">Save display</button>"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 982,
+      "symbol": "showToast",
+      "pr": 10,
+      "excerpt": "function showToast() {"
+    },
+    {
+      "doc": "docs/portal/settings.html",
+      "line": 999,
+      "symbol": "showToast",
+      "pr": 10,
+      "excerpt": "showToast();"
+    }
+  ],
+  "flagged_docs": [
+    "docs/ARCHITECTURE.md",
+    "docs/index.html",
+    "docs/insights.html",
+    "docs/official-brief.html",
+    "docs/overview/docs-drift-watcher.md",
+    "docs/overview/official-brief.md",
+    "docs/overview/product-architecture.md",
+    "docs/portal/settings.html",
+    "docs/prototype/index.html",
+    "docs/showcase-repo-handoff.md",
+    "docs/showcase/docs-drift-watcher.md",
+    "docs/showcase/stonewall-showcase.md"
+  ],
+  "touched_docs": [
+    "docs/ARCHITECTURE.md",
+    "docs/showcase-repo-handoff.md",
+    "docs/overview/product-architecture.md",
+    "docs/overview/docs-drift-watcher.md",
+    "docs/overview/official-brief.md",
+    "docs/showcase/docs-drift-watcher.md",
+    "docs/showcase/stonewall-showcase.md",
+    "docs/index.html",
+    "docs/insights.html",
+    "docs/official-brief.html",
+    "docs/prototype/index.html",
+    "docs/portal/settings.html"
+  ],
+  "report_path": "docs/_drift/REPORT-2026-05-27.md",
+  "drift_detected": true
+}

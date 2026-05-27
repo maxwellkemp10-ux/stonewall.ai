@@ -1,3 +1,14 @@
+<!-- DOCS-DRIFT:BEGIN -->
+> **Documentation drift detected** _(scanned 2026-05-27T14:29:16Z)_
+>
+> The watcher matched API symbols that changed in recently merged PRs against this page. Confirm the page is still accurate, edit if needed, then remove this banner.
+>
+> - **#21** — Resolve open PR conflicts: merge PR \#18 \+ PR \#20, fix all review comments
+>   symbols: `write`
+> - **#28** — feat\(docs\-drift\): daily watcher that flags stale docs against merged PRs
+>   symbols: `GitHub`, `Symbol`
+<!-- DOCS-DRIFT:END -->
+
 # Docs Drift Watcher
 
 **A scheduled, autonomous editor that keeps your documentation honest about the code it describes.**
@@ -134,18 +145,6 @@ Body:
 Each flagged page receives a self-stripping banner immediately after any YAML frontmatter (or at the very top if there is none):
 
 ```markdown
-<!-- DOCS-DRIFT:BEGIN -->
-> **Documentation drift detected** _(scanned 2026-05-22T13:17:00Z)_
->
-> The watcher matched API symbols changed in recently merged PRs
-> against this page. Confirm it is still accurate, edit if needed,
-> then remove this banner.
->
-> - **#4418** — Rename `Matter.dol` to `Matter.dateOfLoss`
->   symbols: `Matter.dol`, `dateOfLoss`
-> - **#4421** — Replace `--pattern` with `--tag`
->   symbols: `--pattern`, `--tag`
-<!-- DOCS-DRIFT:END -->
 ```
 
 The sentinel comments are not decoration. On every subsequent run, the watcher strips the prior banner block before writing the new one, so reruns never stack. Once the editor removes the banner and merges, the page is clean and the watermark advances.
