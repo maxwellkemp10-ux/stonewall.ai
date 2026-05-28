@@ -1,3 +1,12 @@
+<!-- DOCS-DRIFT:BEGIN -->
+> **Documentation drift detected** _(scanned 2026-05-27T14:29:16Z)_
+>
+> The watcher matched API symbols that changed in recently merged PRs against this page. Confirm the page is still accurate, edit if needed, then remove this banner.
+>
+> - **#28** — feat\(docs\-drift\): daily watcher that flags stale docs against merged PRs
+>   symbols: `GitHub`
+<!-- DOCS-DRIFT:END -->
+
 # Stonewall Showcase
 
 Stonewall is a legal document intelligence platform built as a litigation control plane. This page is the showcase narrative entrypoint.

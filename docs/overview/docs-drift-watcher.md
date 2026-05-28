@@ -1,3 +1,14 @@
+<!-- DOCS-DRIFT:BEGIN -->
+> **Documentation drift detected** _(scanned 2026-05-27T14:29:16Z)_
+>
+> The watcher matched API symbols that changed in recently merged PRs against this page. Confirm the page is still accurate, edit if needed, then remove this banner.
+>
+> - **#21** — Resolve open PR conflicts: merge PR \#18 \+ PR \#20, fix all review comments
+>   symbols: `write`
+> - **#28** — feat\(docs\-drift\): daily watcher that flags stale docs against merged PRs
+>   symbols: `/v1/matters`, `GitHub`, `Symbol`
+<!-- DOCS-DRIFT:END -->
+
 # Docs Drift Watcher
 
 **A daily, autonomous editor that catches stale documentation the moment
@@ -105,18 +116,6 @@ frontmatter (or at the top when there is none), between sentinel comments.
 It looks like this:
 
 ```markdown
-<!-- DOCS-DRIFT:BEGIN -->
-> **Documentation drift detected** _(scanned 2026-05-21T13:17:00Z)_
->
-> The watcher matched API symbols that changed in recently merged PRs
-> against this page. Confirm the page is still accurate, edit if
-> needed, then remove this banner.
->
-> - **#482** — Rename `IngestPipeline` to `CorpusPipeline`
->   symbols: `IngestPipeline`, `ingest_corpus`
-> - **#487** — Drop legacy `/v1/matters` route
->   symbols: `/v1/matters`
-<!-- DOCS-DRIFT:END -->
 ```
 
 The sentinels are not decoration. The watcher strips any prior banner
