@@ -114,4 +114,5 @@ CI runs the showcase voice guard on every push (`.github/workflows/verify.yml`).
 | [`AGENTS.md`](../AGENTS.md) | Showcase voice rules and banned phrasing |
 | [`showcase-repo-handoff.md`](showcase-repo-handoff.md) | Publication workflow and release checklist |
 | [`overview/product-architecture.md`](overview/product-architecture.md) | Architecture diagram including JSON snapshot layer |
+| [`repository-presentation-policy.md`](repository-presentation-policy.md) | Branch hygiene and fundable repo presentation |
 | [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) | Copilot guidance mirroring showcase voice rules |

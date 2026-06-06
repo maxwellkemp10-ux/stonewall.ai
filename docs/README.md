@@ -30,7 +30,10 @@ The static operator surface lives in [`portal/`](portal/). Data snapshots are un
 
 ## Publication policy
 
-[`public-content-policy.md`](public-content-policy.md) defines how visitor-facing pages bind to JSON snapshots. Public counts render from generated files — policy text documents bindings, not literal values.
+| Document | Covers |
+| --- | --- |
+| [`public-content-policy.md`](public-content-policy.md) | JSON-backed metrics — bindings, not pinned counts |
+| [`repository-presentation-policy.md`](repository-presentation-policy.md) | Branch hygiene, naming, and fundable repo presentation |
 
 ## Architecture reference
 
