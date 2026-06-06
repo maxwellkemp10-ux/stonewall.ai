@@ -28,6 +28,10 @@ Engineering-exhibit narratives live in [`showcase/`](showcase/).
 
 The static operator surface lives in [`portal/`](portal/). Data snapshots are under `portal/data/*.json`.
 
+## Publication policy
+
+[`public-content-policy.md`](public-content-policy.md) defines how visitor-facing pages bind to JSON snapshots. Public counts render from generated files — policy text documents bindings, not literal values.
+
 ## Architecture reference
 
 [`ARCHITECTURE.md`](ARCHITECTURE.md) is the engineering-grade architecture diagram of the full automation platform.

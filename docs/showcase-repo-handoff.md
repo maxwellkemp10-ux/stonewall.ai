@@ -76,6 +76,6 @@ The script scans publication surfaces and fails on any apologetic or hedging lan
 - [ ] Root showcase URL renders correctly
 - [ ] Official brief renders correctly
 - [ ] Portal renders correctly
-- [ ] Metrics match `docs/site-data.json`
+- [ ] Metrics match `docs/site-data.json` (see [`public-content-policy.md`](public-content-policy.md) for field bindings)
 - [ ] Product language is consistent across all surfaces
 - [ ] No stray archive-language or process-language has crept back into the public story
