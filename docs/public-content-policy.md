@@ -4,7 +4,7 @@ This document defines how publication surfaces in the Stonewall showcase reposit
 
 ## Purpose
 
-Public pages must present live aggregates from checked-in JSON snapshots. Hand-entered counts in HTML, Markdown, or narrative copy drift from the corpus within days and undermine trust in the platform's validation story.
+Public pages must present aggregates sourced from checked-in JSON snapshots. Hand-entered counts in HTML, Markdown, or narrative copy drift from the corpus within days and undermine trust in the platform's validation story.
 
 The policy has two goals:
 
@@ -23,7 +23,9 @@ These surfaces are in scope:
 | `docs/portal/` | `docs/portal/data/*.json` (client-side fetch) |
 | `docs/official-brief.html` | Must stay aligned with brief markdown and JSON snapshots |
 | Root `README.md` | Must stay aligned with `docs/site-data.json` headline metrics |
-| Any new publication page under `docs/` | Must declare its JSON source in this file before merge |
+| Any new metric-bearing publication page under `docs/` | Must declare its JSON source in this file before merge |
+
+> **Static Markdown surfaces** (`README.md` and brief markdown) cannot fetch at runtime, so they mirror — rather than dynamically render — the JSON snapshots. Their headline metrics may only be changed as part of the same commit that updates the JSON field they mirror, and must match that snapshot at merge. The "Must not" hand-enter rule below prohibits counts that have no JSON source or that diverge from it — not the act of keeping a mirror aligned with its JSON during that workflow.
 
 ## Requirements
 

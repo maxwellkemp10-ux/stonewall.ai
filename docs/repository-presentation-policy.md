@@ -59,7 +59,7 @@ Run monthly, or whenever the remote branch list looks cluttered:
 ```bash
 git fetch --prune origin
 
-# List branches whose PRs are merged or closed
+# List branches whose PRs have merged
 gh pr list --repo maxwellkemp10-ux/stonewall.ai --state merged --limit 100 \
   --json headRefName,mergedAt
 
