@@ -68,6 +68,16 @@ These phrases imply that the visible content is a watered-down stand-in for a hi
 3. If you add a new publication surface (a new file under `docs/`, the corpus, or a new top-level showcase doc), it is automatically scanned by the glob list in `scripts/check_showcase_voice.py`. No manual registration needed.
 4. If you genuinely need to discuss the rule itself, do it in `AGENTS.md` or `.github/copilot-instructions.md` — those files are excluded from the scan.
 
+## Repository Presentation
+
+Keep the GitHub repo as clean as the public showcase. Remote branches should be `main` plus any branch with an open PR — nothing else.
+
+- Branch names must describe the work (`cursor/fix-public-content-policy-4a88`), not jokes or session nicknames.
+- Delete head branches when PRs merge or close without merge.
+- Agents must not leave orphan branches on `origin` without an open PR.
+
+Full rules: [`docs/repository-presentation-policy.md`](docs/repository-presentation-policy.md).
+
 ## Cursor Cloud specific instructions
 
 ### Runtime environment
